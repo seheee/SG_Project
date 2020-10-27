@@ -13,10 +13,8 @@
     width: 100%;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: white;
-    opacity: 0.7;
-    align-items: center;
   
     position: fixed;
     top: 0;
@@ -25,9 +23,25 @@
     z-index: 1;
     transition: top 0.2s ease-in-out;
   }
+  .headerRow{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+
+  }
   .headerColumn {
     width: 33%;
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
+  .headerColumn span{
+  color:rgba(0,0,0,0.7);
+  font-weight: 500;
+
+  }
+  #Login{
+    margin-left:30px;
+}
