@@ -2,19 +2,18 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="./css/popular.css" />
-    <link rel="stylesheet" href="mypage.css" />
-    <link rel="stylesheet" href="home.css" />
-    <link rel="stylesheet" href="header.css" />
-    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="../css/popular.css" />
+    <link rel="stylesheet" href="../css/mypage.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
 </head>
 
 <body>
-    <div class="home">
-        <header>
+    <header>
+        <div class="headerRow">
             <div class="headerColumn">
                 <a href="./home.html">
-                    <img src="./img/home.svg" />
+                    <img src="../img/home.svg" />
                 </a>
             </div>
             <div class="headerColumn">
@@ -22,10 +21,22 @@
             </div>
             <div class="headerColumn">
                 <a href="https://www.instagram.com/juunzzi/">
-                    <img src="./img/search.svg" />
+                    <img src="../img/search.svg" />
+                </a>
+                <a href="../html/singIn.html">
+                    <span id="Login">Login</span>
                 </a>
             </div>
-        </header>
+        </div>
+        <div class="headerRow">
+            <div class="headerColumn">
+                <span>OUTER</span>
+            </div>
+            <div class="headerColumn"><span>TOP</span></div>
+            <div class="headerColumn"><span>BOTTOM</span></div>
+            <div class="headerColumn"><span>SHOES</span></div>
+        </div>
+    </header>
 
         <div class="Section">
 
@@ -40,10 +51,12 @@
 
                 <div class="col-4 accountinfo box">
                     <div class="profile logo" >
-                        <img class="profileimg logo" src="./img/my_page_profile.png" alt="mypage profile" class="left">
+                        <img class="profileimg logo" src="../img/my_page_profile.png" alt="mypage profile" class="left">
                     </div>
                     <div class="profile info">
-                        <p>ID: ASDW****</p><p> 홍길동 님</p>
+                        <span>
+                        <p>ID: ASDW****</p>
+                        <p> 홍길동 님</p></span>
                     </div>
                     
                 </div>
@@ -95,7 +108,6 @@ Elit adipisicing reprehenderit consectetur ullamco irure. Tempor laboris ipsum d
         <footer>
             <span>copyrightⓒ by supergreat</span>
         </footer>
-    </div>
 </body>
 
 </html>
