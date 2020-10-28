@@ -9,7 +9,6 @@
     background-image: url("./imgs/instagram.svg");
   }
   header {
-    height: 60px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -42,6 +41,6 @@
   font-weight: 500;
 
   }
-  #Login{
+  #Login, #mypage, #cart{
     margin-left:30px;
-}
+  }
