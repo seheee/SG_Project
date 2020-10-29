@@ -2,10 +2,14 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
-        <title>회원가입</title>
+        <title>SG_SignUp</title>
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="../css/header.css" />
+        <link rel="stylesheet" href="../css/footer.css" />
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/join.css" />
         <script>
         $( function() {
             $( "#datepicker" ).datepicker();
@@ -19,8 +23,52 @@
     </head>
 
     <body>
+        <header>
+            <div class="headerRow">
+              <div class="headerColumn">
+                <a href="./home.html">
+                  <img src="../img/home.svg" />
+                </a>
+              </div>
+              <div class="headerColumn">
+                <a href="./home.html">
+                  <h2>SHOP</h2>
+                </a>
+              </div>
+              <div class="headerColumn">
+                <a href="https://www.instagram.com/juunzzi/">
+                  <img src="../img/search.svg" />
+                </a>
+                <a href="./singIn.html">
+                  <span id="Login">Login</span>
+                </a>
+                <a href="./mypage.html">
+                  <span id="mypage">MyPage</span>
+                </a>
+                <a href="./cart.html">
+                  <span id="cart">Cart</span>
+                </a>
+                
+              </div>
+            </div>
+            <br>
+            <div class="headerRow">
+              <div class="headerColumn"><a href="./products.html"><span>OUTER</span></a></div>
+              <div class="headerColumn"><a href="./products.html"><span>TOP</span></a></div>
+              <div class="headerColumn"><a href="./products.html"><span>BOTTOM</span></a></div>
+              <div class="headerColumn"><a href="./products.html"><span>SHOES</span></a></div>
+            </div>
+            <br><br>
+            <div class="headerRow">
+              <div class="headerColumn"><a href="./sale.html"><span>SALE</span></a></div>
+              <div class="headerColumn"><a href="./popular.html"><span>POPULAR</span></a></div>
+              <div class="headerColumn"><a href="./sale.html"><span>SALE</span></a></div>
+              <div class="headerColumn"><a href="./popular.html"><span>POPULAR</span></a></div>
+            </div>
+            <br>
+          </header>
     <form action="#" method="post">
-        <fieldset>
+        <fieldset class="field">
             <legend>필수 입력 사항</legend>
             <p>
                 <label for="name">이름: </label> 
@@ -36,7 +84,7 @@
             </p>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="field">
                 <legend>부가 입력 사항</legend>
                 <p>
                     <label for="datepicker">생년월일: </label> 
@@ -95,11 +143,11 @@
                     <!-- textarea 태그사이에 공백이 있어서는 안된다!!! -->
                 </p>
             </fieldset>
-            <p>
+            <p align="center">
                 <input type="submit" value="회원가입"/>
                 <input type="reset" value="재작성"/>
                 <button type="submit">전송</button>
-                <hr/>
+             
                 <input class="btn" type="image" src="send.png" alt="send"/>
                 <button class="btn" type="submit"><img src="send.png" alt="send"></button>
                 <!-- 버튼은 항상 무조건 테두리가 생긴다!!! -->
