@@ -1,0 +1,36 @@
+{
+  "name": "shop",
+  "version": "1.0.0",
+  "description": "shop application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node init.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seheee/SG_Project.git"
+  },
+  "author": "jang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seheee/SG_Project/issues"
+  },
+  "homepage": "https://github.com/seheee/SG_Project#readme",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.6",
+    "body-parser": "^1.19.0",
+    "consolidate": "^0.16.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.2.0",
+    "morgan": "^1.10.0",
+    "mustache": "^4.0.1",
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.1"
+  }
+}
