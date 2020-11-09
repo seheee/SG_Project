@@ -34,3 +34,9 @@ app.use(routes.home,userRouter)
 app.use(routes.home,clothesRouter)
 
 export default app;
+
+
+//NodeJs --> 서버의 구동방식 
+//express -> use (라우터, 라우터 처리함수) === app.use(routes.home,homeRouter)
+//use -> router함수 -> 각 라우터별로 -> Controller를 달아서 처리한다
+// app -> router -> controller 이런 방향으로 데이터 처리 이루어짐 (MVC패턴을 구현한것임)

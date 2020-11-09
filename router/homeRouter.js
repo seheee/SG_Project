@@ -1,12 +1,23 @@
-import express from 'express'
-import { homeController, joinController, loginController, logoutController, searchController, uploadController } from '../controller/globalController';
-import { routes } from '../routes';
+import express from "express";
+import {
+  homeController,
+  getJoinController,
+  postJoinController,
+  getLoginController,
+  postLoginController,
+  logoutController,
+  searchController,
+  uploadController,
+} from "../controller/globalController";
+import { routes } from "../routes";
 
 export const homeRouter = express.Router();
 
-homeRouter.get(routes.home,homeController)
-homeRouter.get(routes.logout,logoutController)
-homeRouter.get(routes.login,loginController)
-homeRouter.get(routes.join,joinController)
-homeRouter.get(routes.search,searchController)
-homeRouter.get(routes.upload,uploadController)
+homeRouter.get(routes.home, homeController);
+homeRouter.get(routes.logout, logoutController);
+homeRouter.get(routes.login, getLoginController);
+homeRouter.post(routes.login, postLoginController);//로그인 시 post로
+homeRouter.get(routes.join, getJoinController);
+homeRouter.post(routes.join, postJoinController,postLoginController);// post join요청 -> post Login 로직수행
+homeRouter.get(routes.search, searchController);
+homeRouter.get(routes.upload, uploadController);
