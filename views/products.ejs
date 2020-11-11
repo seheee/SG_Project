@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>SG_SaleItems</title>
+      <link rel="stylesheet" href="../css/header.css" />
+      <link rel="stylesheet" href="../css/footer.css" />
+      <link rel="stylesheet" href="../css/sale.css" />
+      <link rel="stylesheet" href="../css/reset.css" />
+  </head>
+  <body>
+    <header class="row">
+      <div class="headerRow">
+        <div class="headerColumn">
+          <a href="./home.html">
+            <img src="../img/home.svg" />
+          </a>
+        </div>
+        <div class="headerColumn">
+          <a href="./home.html">
+            <h2>SHOP</h2>
+          </a>
+        </div>
+        <div class="headerColumn">
+          <a href="https://www.instagram.com/juunzzi/">
+            <img src="../img/search.svg" />
+          </a>
+          <a href="./singIn.html">
+            <span id="Login">Login</span>
+          </a>
+          <a href="./mypage.html">
+            <span id="mypage">MyPage</span>
+          </a>
+          <a href="./cart.html">
+            <span id="cart">Cart</span>
+          </a>
+        </div>
+      </div><br>
+      <div class="headerRow">
+        <div class="headerColumn"><a href="./products.html"><span>OUTER</span></a></div>
+        <div class="headerColumn"><a href="./products.html"><span>TOP</span></a></div>
+        <div class="headerColumn"><a href="./products.html"><span>BOTTOM</span></a></div>
+        <div class="headerColumn"><a href="./products.html"><span>SHOES</span></a></div>
+      </div><br><br>
+      <div class="headerRow">
+        <div class="headerColumn"><a href="./sale.html"><span>SALE</span></a></div>
+        <div class="headerColumn"><a href="./popular.html"><span>POPULAR</span></a></div>
+        <div class="headerColumn"><a href="./sale.html"><span>SALE</span></a></div>
+        <div class="headerColumn"><a href="./popular.html"><span>POPULAR</span></a></div>
+      </div><br>
+    </header>
+      <div class="row">
+        <h3 id="category"></h3>
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <!--<div class="text">Outer</div><br>-->
+          <div class="products">
+            <% data.forEach(function (item,index){ %>
+              <section class="product">
+                <div class="each-product">
+                  <a href="itemDetail.html">
+                  <img src="<%= item.main_img %>" style="width:100%">
+                  <p class="product_name"><%= item.name %></p>
+                  <p class="product_price"><%= item.price %></p>
+                  <p class="product_ex">product explanation</p>
+                </a>
+                </div>
+              </section>
+            <% })%>
+            
+          </div>       
+        </div>
+      </div>
+      <br>
+      
+      <footer>
+        <span>&copy;copyright by supergreat</span>
+      </footer>
+    
+    <script>
+     
+    </script>
+  </body>
+</html>
+
+
+
+ 

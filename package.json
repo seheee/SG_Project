@@ -28,6 +28,7 @@
     "helmet": "^4.2.0",
     "morgan": "^1.10.0",
     "mustache": "^4.0.1",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.6"
   },
   "devDependencies": {

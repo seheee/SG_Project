@@ -21,7 +21,7 @@ const CLOTHES_POPULAR = "/clothes/popular"
 const CLOTHES_DETAIL = "/clothes/:id"
 
 const UPLOAD = "/upload"
-
+const ADMIN = "/admin"
 export const routes = {
     home :HOME,
     login : LOGIN,
@@ -42,6 +42,7 @@ export const routes = {
     clothesShoes:CLOTHES_SHOES,
     clothesPopular:CLOTHES_POPULAR,
     clothesDetail:CLOTHES_DETAIL,
-    upload:UPLOAD
+    upload:UPLOAD,
+    admin:ADMIN
     
 }

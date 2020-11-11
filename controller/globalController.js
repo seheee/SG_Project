@@ -1,5 +1,6 @@
 import express from "express";
 import {} from "../routes";
+import {connection} from "../app";
 //디비 작업은 이곳에서
 export const homeController = (req, res) => {
   res.render("home.html");
@@ -30,5 +31,16 @@ export const searchController = (req, res) => {
   res.render("singIn.html");
 };
 export const uploadController = (req, res) => {
-  res.render("singIn.html");
+  var queryString = 'insert into product(category, name, price, discount, gender, stock, likeCnt, main_img, detail_img) values("'
+  + req.body.category + '","' + req.body.name + '",' + req.body.price + ',' + req.body.discount + ',"' + req.body.gender + '",' 
+  + req.body.stock + ',' + req.body.likeCnt + ',"' + req.body.main_img + '","' + req.body.detail_img + '");';
+
+  connection.query(queryString, function (error, result) {
+    if (error) throw error;
+    console.log('Upload Successful');
+  })
+  res.render("admin.html");
+};
+export const adminController = (req, res) => {
+  res.render("admin.html");
 };

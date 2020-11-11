@@ -8,9 +8,22 @@ import { homeRouter } from "./router/homeRouter";
 import { clothesRouter } from "./router/clothesRouter";
 import {routes} from "./routes"
 import consolidate from "consolidate"//html engine
+import mysql from "mysql" //mysqlDB
 
 //express 객체 받아오기
 const app = express();
+
+export const connection = mysql.createConnection({
+    host:'localhost',
+    user:'root',
+    password:'ssu',
+    database:'SGProject'
+});
+connection.connect();
+connection.query('SELECT * from user', (error, rows, fields) => {
+    if (error) throw error;
+    console.log('User info is: ', rows);
+});
 
 //PORT dotenv에서 받아오기
 //미드웨어들 사용

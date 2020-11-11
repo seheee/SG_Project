@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>SG_SaleItems</title>
+      <link rel="stylesheet" href="../css/header.css" />
+      <link rel="stylesheet" href="../css/footer.css" />
+      <link rel="stylesheet" href="../css/sale.css" />
+      <link rel="stylesheet" href="../css/reset.css" />
+  </head>
+  <body>
+    <header class="row">
+      <div class="headerRow">
+        <div class="headerColumn">
+          <a href="./home.html">
+            <img src="../img/home.svg" />
+          </a>
+        </div>
+        <div class="headerColumn">
+          <a href="./home.html">
+            <h2>SHOP</h2>
+          </a>
+        </div>
+        <div class="headerColumn">
+          <a href="https://www.instagram.com/juunzzi/">
+            <img src="../img/search.svg" />
+          </a>
+          <a href="./singIn.html">
+            <span id="Login">Login</span>
+          </a>
+          <a href="./mypage.html">
+            <span id="mypage">MyPage</span>
+          </a>
+          <a href="./cart.html">
+            <span id="cart">Cart</span>
+          </a>
+        </div>
+      </div><br>
+      <div class="headerRow">
+        <div class="headerColumn"><a href="./products.html"><span>OUTER</span></a></div>
+        <div class="headerColumn"><a href="./products.html"><span>TOP</span></a></div>
+        <div class="headerColumn"><a href="./products.html"><span>BOTTOM</span></a></div>
+        <div class="headerColumn"><a href="./products.html"><span>SHOES</span></a></div>
+      </div><br><br>
+      <div class="headerRow">
+        <div class="headerColumn"><a href="./sale.html"><span>SALE</span></a></div>
+        <div class="headerColumn"><a href="./popular.html"><span>POPULAR</span></a></div>
+        <div class="headerColumn"><a href="./sale.html"><span>SALE</span></a></div>
+        <div class="headerColumn"><a href="./popular.html"><span>POPULAR</span></a></div>
+      </div><br>
+    </header>
+      <div class="row">
+        <form id="upload_form" action="./upload" method="POST">
+
+            <fieldset>
+                <legend>데이터추가 </legend>
+                <table>
+                    <tr>
+                        <td><label>상품명 </label></td>
+                        <td><input type="text" name="name" id="name" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>카테고리</label></td>
+                        <td><select name="category" id="category">
+                            <option value="outer">outer</option>
+                            <option value="top">top</option>
+                            <option value="bottom">bottom</option>
+                            <option value="shoes">shoes</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label>가격</label></td>
+                        <td><input type="number" name="price" id="price"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>할인율</label></td>
+                        <td><input type="number" name="discount" id="discount"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label>성별</label></td>
+                        <td>
+                            <input type="radio" name="gender" id="gender" value="F">F</input>
+                            <input type="radio" name="gender" id="gender" value="M">M</input>
+                            <input type="radio" name="gender" id="gender" value="A">A</input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>재고</label></td>
+                        <td><input type="number" name="stock" id="stock"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>좋아요 수</label></td>
+                        <td><input type="number" name="likeCnt" id="likeCnt"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>메인 이미지</label></td>
+                        <td><input type="text" name="main_img" id="main_img" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>상세 이미지 </label></td>
+                        <td><input type="text" name="detail_img" id="detail_img" /></td>
+                    </tr>
+                </table>
+                <input type="submit" id="upload" value="upload" />
+            </fieldset>
+        </form>
+     </div>
+      <br>
+      
+      <footer>
+        <span>&copy;copyright by supergreat</span>
+      </footer>
+    
+    <script>
+     
+    </script>
+  </body>
+</html>
+
+
+
+ 
