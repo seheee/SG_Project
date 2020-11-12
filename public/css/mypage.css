@@ -4,7 +4,8 @@ body {
 
 .Container {
   position: relative;
-  margin: 12%;
+  margin: 6%;
+  padding: 6%;
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -38,17 +39,17 @@ body {
 }
 .order_status {
   border-radius: 10px;
-  background: rgb(241, 241, 241);
+  background: rgb(226, 255, 228);
   text-align: center;
 }
 .member_points {
   border-radius: 10px;
-  background: rgb(241, 241, 241);
+  background: rgb(255, 198, 198);
   text-align: center;
 }
 .member_list {
   border-radius: 10px;
-  background: rgb(241, 241, 241);
+  background: rgb(250, 226, 208);
   text-align: center;
 }
 .profile_img {
@@ -56,12 +57,28 @@ body {
   width: 170px;
   height: 170px;
 }
+.order_img {
+  background-color: grey;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+}
+.list_img {
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+}
+.points_img {
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+}
 .main {
   border-radius: 10px;
   background: rgb(241, 241, 241);
   text-align: center;
   margin: 10px;
-  padding: 10px;
+  padding: 30px;
   grid-column: 2/6;
 }
 .category {
@@ -69,9 +86,10 @@ body {
   background: rgb(241, 241, 241);
   text-align: center;
   margin: 10px;
-  padding: 10px;
+  padding: 30px;
 }
 .nav {
+  text-align: center;
   margin: 5px;
   padding: 5px;
 }
