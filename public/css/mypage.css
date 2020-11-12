@@ -34,8 +34,7 @@ body {
 }
 .profile {
   border-radius: 10px;
-  background: rgb(241, 241, 241);
-  text-align: center;
+  text-align: left;
 }
 .order_status {
   border-radius: 10px;
