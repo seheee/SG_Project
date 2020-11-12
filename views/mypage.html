@@ -1,123 +1,157 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>SG_MyPage</title>
-    <link rel="stylesheet" href="../css/mypage.css" />
-    <link rel="stylesheet" href="../css/header.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
-    <link rel="stylesheet" href="../css/reset.css" />
-</head>
+    <link rel="stylesheet" href="../public/css/header.css" />
+    <link rel="stylesheet" href="../public/css/footer.css" />
+    <link rel="stylesheet" href="../public/css/mypage.css" />
+    <link rel="stylesheet" href="../public/css/reset.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="headerRow">
-            <div class="headerColumn">
-                <a href="./home.html">
-                    <img src="../img/home.svg" />
-                </a>
-            </div>
-            <div class="headerColumn">
-                <a href="./home.html">
-                    <h2>SHOP</h2>
-                  </a>
-            </div>
-            <div class="headerColumn">
-                <a href="https://www.instagram.com/juunzzi/">
-                    <img src="../img/search.svg" />
-                </a>
-                <a href="./singIn.html">
-                    <span id="Login">Login</span>
-                  </a>
-                  <a href="./mypage.html">
-                    <span id="mypage">MyPage</span>
-                  </a>
-                  <a href="./cart.html">
-                    <span id="cart">Cart</span>
-                  </a>
-            </div>
-        </div><br>
-        <div class="headerRow">
-            <div class="headerColumn"><a href="./products.html"><span>OUTER</span></a></div>
-            <div class="headerColumn"><a href="./products.html"><span>TOP</span></a></div>
-            <div class="headerColumn"><a href="./products.html"><span>BOTTOM</span></a></div>
-            <div class="headerColumn"><a href="./products.html"><span>SHOES</span></a></div>
-          </div><br><br>
-          <div class="headerRow">
-            <div class="headerColumn"><a href="./sale.html"><span>SALE</span></a></div>
-            <div class="headerColumn"><a href="./popular.html"><span>POPULAR</span></a></div>
-            <div class="headerColumn"><a href="./sale.html"><span>SALE</span></a></div>
-            <div class="headerColumn"><a href="./popular.html"><span>POPULAR</span></a></div>
-          </div><br>
+      <div class="headerRow">
+        <div class="headerColumn">
+          <a href="./home.html">
+            <img src="../public/img/home.svg" />
+          </a>
+        </div>
+        <div class="headerColumn">
+          <a href="./home.html">
+            <h2>SHOP</h2>
+          </a>
+        </div>
+        <div class="headerColumn">
+          <a href="https://www.instagram.com/juunzzi/">
+            <img src="../public/img/search.svg" />
+          </a>
+          <a href="./singIn.html">
+            <span id="Login">Login</span>
+          </a>
+          <a href="./mypage.html">
+            <span id="mypage">MyPage</span>
+          </a>
+          <a href="./cart.html">
+            <span id="cart">Cart</span>
+          </a>
+        </div>
+      </div>
+      <br />
+      <div class="headerRow">
+        <div class="headerColumn">
+          <a href="./products.html"><span>OUTER</span></a>
+        </div>
+        <div class="headerColumn">
+          <a href="./products.html"><span>TOP</span></a>
+        </div>
+        <div class="headerColumn">
+          <a href="./products.html"><span>BOTTOM</span></a>
+        </div>
+        <div class="headerColumn">
+          <a href="./products.html"><span>SHOES</span></a>
+        </div>
+      </div>
+      <br /><br />
+      <div class="headerRow">
+        <div class="headerColumn">
+          <a href="./sale.html"><span>SALE</span></a>
+        </div>
+        <div class="headerColumn">
+          <a href="./popular.html"><span>POPULAR</span></a>
+        </div>
+        <div class="headerColumn">
+          <a href="./sale.html"><span>SALE</span></a>
+        </div>
+        <div class="headerColumn">
+          <a href="./popular.html"><span>POPULAR</span></a>
+        </div>
+      </div>
+      <br />
     </header>
 
-        <div class="Section">
-            <div class="col-12 mypage-title">
-                <span>My Page</span>
-            </div>
-            
-            
-            <!-- Mypage header section -->
-            <section class="mypageheader row">
-                <div class="col-4 accountinfo box">
-                    <div class="profile logo" >
-                        <img class="profileimg logo" src="../img/my_page_profile.png" alt="mypage profile" class="left">
-                    </div>
-                    <div class="profile info">
-                        <span>
-                        <p>ID: ASDW****</p>
-                        <p> 홍길동 님</p></span>
-                    </div>
-                    
-                </div>
+    <div class="Container">
+      <div class="mypage-title">마이페이지</div>
 
-                <div class="memberinfo box" >
-                    <p> 주문배송 : 1  건 배송중</p>
-                </div>
+      <div class="profile_logo">
+        <img
+          class="profile_img"
+          src="../public/img/my_page_profile.png"
+          alt="mypage profile"
+        />
+      </div>
 
-                <div class="memberinfo box">
-                    <p> 포인트 : 1000 points 적립</p>
-                </div>
-                <div class="memberinfo box">
-                    <p> 구매내역 : 10 건</p>
-                </div>
-                
+      <div class="profile">
+        <p>
+          <span>ID:</span>
+          <span>Asdjw2014***</span>
+        </p>
 
-            
+        <p>
+          <span>홍길동</span>
+          <span>님</span>
+        </p>
+      </div>
 
-            </div>
-            <div class="mypage aside">
-                CATEGORY
-                <div class="nav">
-                    MENU
-                    <ul>개인 정보</ul>
-                    <ul> 좋아요 한 상품</ul>
-                    <ul> 장바구니</ul>
-                </div>
-            </div>
-            <div class="mypage main">
-                <div class="info box">
-                    <p>Lorem ipsum dolor sit amet consectetur adMinim mollit ad ipsum aute veniam id pariatur est aliquip aute commodo velit labore sint. Qui ullamco et ullamco exercitation officia. Laborum nostrud velit consequat consectetur sunt ea cupidatat nulla occaecat dolor irure in cupidatat. Deserunt quis adipisicing do cillum consectetur cillum aute fugiat.
+      <div class="order_status">
+        <p>주문배송 : 1 건 배송중</p>
+      </div>
 
-Consequat aliqua sunt occaecat consequat est culpa dolor. Voluptate elit incididunt et sit magna anim exercitation aliquip nisi tempor nulla commodo. Consectetur consectetur incididunt pariatur in aliqua anim cillum eu. Ut elit exercitation exercitation ullamco esse reprehenderit esse minim adipisicing cupidatat ullamco pariatur ullamco sint. Enim veniam do commodo pariatur eu anim consectetur ex esse officia tempor commodo aliquip. Nulla excepteur irure commodo excepteur elit. Adipisicing proident commodo laboris dolore ad adipisicing duis veniam sit.
+      <div class="member_points">
+        <p>포인트 : 1000 points 적립</p>
+      </div>
 
-Pariatur do cupidatat exercitation velit ex officia cillum anim laborum aute non elit sint labore. Et irure labore officia pariatur culpa labore. Magna laborum ex aute sint nisi exercitation eiusmod magna velit quis sunt sunt ipsum. Ad labore fugiat enim nulla exercitation ad minim quis.
+      <div class="member_list">
+        <p>구매내역 : 10 건</p>
+      </div>
 
-Duis quis adipisicing velit id nulla est excepteur. Id ea enim est labore ea aliquip aute veniam pariatur amet culpa velit veniam sint. Sit do incididunt commodo est culpa et ad. Elit reprehenderit ut laborum Lorem. Eu qui nisi commodo nostrud tempor fugiat cupidatat commodo officia.
-
-Incididunt enim culpa enim id aliqua fugiat irure ipsum ea deserunt deserunt. Eiusmod exercitation do ut excepteur anim id ut consequat ullamco reprehenderit nulla nostrud. Eiusmod aute officia ipsum cupidatat cupidatat non culpa enim. Ea est aliquip officia et. Eiusmod duis in consequat ea ad Lorem consequat sunt magna. Culpa id ullamco occaecat irure nulla fugiat. Non aliquip anim et exercitation.
-
-In duis ipsum mollit aliqua occaecat consequat consequat est exercitation sint. Commodo consequat sunt excepteur dolor ut nostrud esse qui do. Tempor officia enim ad est consequat aliqua do reprehenderit qui reprehenderit voluptate nulla. Sit nostrud laborum sit enim. Incididunt dolore exercitation quis cillum adipisicing mollit dolore adipisicing commodo incididunt ipsum. Elit eiusmod dolore sit dolor commodo sint elit eiusmod ea velit velit. Aliquip voluptate dolore voluptate quis magna veniam sint est consequat amet.
-
-Elit adipisicing reprehenderit consectetur ullamco irure. Tempor laboris ipsum dolore quis proident in Lorem laboris. Occaecat eu cillum voluptate laborum enim dolor adipisicing velit laborum eu fugiat. Aliquip voluptate commodo dolor sunt id velit excepteur mollit reprehenderit mollit fugiat.ipisicing elit. Consequuntur itaque laudantium quidem velit nisi culpa dolore vero alias doloribus corporis, mollitia, eveniet odio a quae est quo eos reprehenderit amet?</p>
-                </div>
-            </div>
-            
-            </div>
+      <div class="category">
+        CATEGORY
+        <div class="nav">
+          <ul>
+            개인 정보
+          </ul>
+          <ul>
+            좋아요 한 상품
+          </ul>
+          <ul>
+            장바구니
+          </ul>
         </div>
-        <footer>
-            <span>copyrightⓒ by supergreat</span>
-        </footer>
-</body>
+      </div>
+      <div class="main">
+        Lorem ipsum dolor sit amet consectetur adMinim mollit ad ipsum aute
+        veniam id pariatur est aliquip aute commodo velit labore sint. Qui
+        ullamco et ullamco exercitation officia. Laborum nostrud velit consequat
+        consectetur sunt ea cupidatat nulla occaecat dolor irure in cupidatat.
+        Deserunt quis adipisicing do cillum consectetur cillum aute fugiat.
+        Consequat aliqua sunt occaecat consequat est culpa dolor. Voluptate elit
+        incididunt et sit magna anim exercitation aliquip nisi tempor nulla
+        commodo. Consectetur consectetur incididunt pariatur in aliqua anim
+        cillum eu. Ut elit exercitation exercitation ullamco esse reprehenderit
+        esse minim adipisicing cupidatat ullamco pariatur ullamco sint. Enim
+        veniam do commodo pariatur eu anim consectetur ex esse officia tempor
+        commodo aliquip. Nulla excepteur irure commodo excepteur elit.
+        Adipisicing proident commodo laboris dolore ad adipisicing duis veniam
+        sit. Pariatur do cupidatat exercitation velit ex officia cillum anim
+        laborum aute non elit sint labore. Et irure labore officia pariatur
+        culpa labore. Magna laborum ex aute sint nisi exercitation eiusmod magna
+        velit quis sunt sunt ipsum. Ad labore fugiat enim nulla exercitation ad
+        minim quis. Duis quis adipisicing velit id nulla est excepteur. Id ea
+        enim est labore ea aliquip aute veniam pariatur amet culpa velit veniam
+        sint. Sit do incididunt commodo est culpa et ad. Elit reprehenderit ut
+        laborum Lorem. Eu qui nisi commodo nostrud tempor fugiat cupidatat
+        commodo officia. Incididunt enim culpa enim id aliqua fugiat irure ipsum
+        ea deserunt deserunt. Eiusmod exercitation do ut excepteur anim id ut
+        consequat ullamco reprehenderit nulla nostrud. Eiusmod aute officia
+        ipsum cupidatat cupidatat non culpa enim. Ea est aliquip officia et.
+        Eiusmod duis in consequat ea ad Lorem consequat sunt magna. Culpa id
+        ullamco occaecat irure nulla fugiat. Non aliquip anim et exercitation.
+        In duis ipsum mollit aliqua
+      </div>
+    </div>
 
+    <footer>
+      <span>copyrightⓒ by supergreat</span>
+    </footer>
+  </body>
 </html>
