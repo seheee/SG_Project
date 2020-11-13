@@ -31,8 +31,8 @@ li {
 
 .Container {
   position: relative;
-  margin: 3%;
-  padding: 3%;
+  margin: 1.5%;
+  padding: 1.5%;
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
