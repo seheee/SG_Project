@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang ="ko">
   <head>
     <title>SG_MyPage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=">
     <link rel="stylesheet" href="../public/css/header.css" />
     <link rel="stylesheet" href="../public/css/footer.css" />
     <link rel="stylesheet" href="../public/css/mypage.css" />
@@ -9,6 +11,7 @@
   </head>
 
   <body>
+  <div class="wrap">
     <header>
       <div class="headerRow">
         <div class="headerColumn">
@@ -69,9 +72,10 @@
       <br />
     </header>
 
-    <div class="Container">
-      <div class="mypage-title">마이페이지</div>
-
+  <div class="Container">
+    <div class="mypage-title"><h3>마이페이지</h3> <p style="font-size: 1erm; color: grey;">회원님의 정보를 한눈에 보실 수 있습니다.</p></div>
+    <div class="wrapper">
+      <p style="padding-left: 80px; margin-bottom: 2px;font-size: 1erm; color: grey;">  프로필 정보</p> 
       <div class="profile_logo">
         <img
           class="profile_img"
@@ -81,7 +85,9 @@
       </div>
 
       <div class="profile">
-        <p>
+        <br>
+        <br>
+        <p> 
           <span>ID:</span>
           <span>Asdjw2014***</span>
         </p>
@@ -92,68 +98,73 @@
         </p>
       </div>
 
-      <div class="order_status">
-        <p>
-          <br />
-          <img
-            class="order_img"
-            src="../public/img/my_page_order.png"
-            alt="mypage profile"
-          />
-          <br />
-          <br />
-          주문배송 <br /><br />
-          1 건 <br /><br />
-          배송중
-        </p>
-      </div>
+      
+    </div>
 
-      <div class="member_points">
-        <p>
-          <br />
-          <img
-            class="points_img"
-            src="../public/img/my_page_points.png"
-            alt="mypage profile"
-          />
-          <br />
-          <br />
-          포인트<br /><br />
-          1000 P
-        </p>
-      </div>
+    <div class="order_status">
+      <p>
+        <br />
+        <img
+          class="order_img"
+          src="../public/img/my_page_order.png"
+          alt="mypage profile"
+        />
+        <br />
+        <br />
+        주문배송 <br /><br />
+        1 건 <br /><br />
+        배송중
+      </p>
+    </div>
 
-      <div class="member_list">
-        <p>
-          <br />
-          <img
-            class="list_img"
-            src="../public/img/my_page_list.png"
-            alt="mypage profile"
-          />
-          <br />
-          <br />
-          구매내역<br /><br />
-          10 건<br /><br />
-        </p>
-      </div>
+    <div class="member_points">
+      <p>
+        
+        
+        <br />
+        <img
+          class="points_img"
+          src="../public/img/my_page_points.png"
+          alt="mypage profile"
+        />
+        <br />
+        <br />
+        포인트<br /><br />
+        1000 P
+      </p>
+    </div>
 
-      <div class="category">
-        CATEGORY
-        <div class="nav">
-          <ul>
-            개인 정보
-          </ul>
-          <ul>
-            좋아요 한 상품
-          </ul>
-          <ul>
-            장바구니
-          </ul>
-        </div>
-      </div>
-      <div class="main">
-        Lorem ipsum dolor sit amet consectetur adMinim mollit ad ipsum aute
+    <div class="member_list">
+      <p>
+        <br />
+        <img
+          class="list_img"
+          src="../public/img/my_page_list.png"
+          alt="mypage profile"
+        />
+        <br />
+        <br />
+        구매내역<br /><br />
+        10 건<br /><br />
+      </p>
+    </div>
+
+    <div class="category">
+          <li style="background-color: lightgrey; border-radius: 3px;"><br><b style="color: rgb(82, 82, 82);">MY 쇼핑 </b>  </li>
+          <br>
+          
+          <li>장바구니</li>
+          <li>주문/배송조회</li>
+          <li>주문내역변경</li>
+          <li>취소/반품/교환</li>
+          <li>처리 현황</li>
+
+          <br>
+          <li>회원정보 변경</li>
+        
+    </div>
+    <div class="main">
+      <p>Lorem ipsum dolor sit amet consectetur adMinim mollit ad ipsum aute
         veniam id pariatur est aliquip aute commodo velit labore sint. Qui
         ullamco et ullamco exercitation officia. Laborum nostrud velit consequat
         consectetur sunt ea cupidatat nulla occaecat dolor irure in cupidatat.
@@ -180,12 +191,15 @@
         ipsum cupidatat cupidatat non culpa enim. Ea est aliquip officia et.
         Eiusmod duis in consequat ea ad Lorem consequat sunt magna. Culpa id
         ullamco occaecat irure nulla fugiat. Non aliquip anim et exercitation.
-        In duis ipsum mollit aliqua
-      </div>
+        In duis ipsum mollit aliqua</p>
+      
     </div>
+  </div>
 
-    <footer>
-      <span>copyrightⓒ by supergreat</span>
-    </footer>
+  <footer>
+    <span>copyrightⓒ by supergreat</span>
+  </footer>
+</div>
+    
   </body>
 </html>
