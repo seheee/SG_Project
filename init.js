@@ -1,5 +1,6 @@
 import app from "./app";
-import config from "./config"
+import "./config";
+import "./db";
 const PORT = process.env.PORT;
 
 const handleListening = () =>
