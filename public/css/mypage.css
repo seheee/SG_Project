@@ -1,57 +1,137 @@
-
-body{
-  background-color: white;
+@font-face {
+  font-family: "BMHANNAAir";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
-.mypage-title{
-  position: absolute;
-  top:50px;
+.wrap {
+  position: relative;
+  background: white;
+  width: 100%;
+}
+h3 {
+  color: rgb(46, 46, 46);
+  font-weight: 550;
+  font-size: 2.5rem;
+  font-family: "BMHANNAAir", sans-serif;
+}
+p,
+li {
+  font-family: "BMHANNAAir", sans-serif;
+  color: rgb(46, 46, 46);
+  font-weight: 510;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+.Container {
+  position: relative;
+  margin: 1.5%;
+  padding: 1.5%;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  background: white;
+}
+
+.mypage-title {
+  margin: 20px;
+  padding: 20px;
+  grid-column: 1/6;
   font-size: 24px;
   font-weight: 400;
+  padding-bottom: 10px;
+  border-bottom: solid grey 2px;
+  margin-bottom: 80px;
+  background: white;
 }
-.box {
-  margin-left: 20px;
+.wrapper {
+  grid-column: 1/3;
+  margin-left: 10px;
+  margin-right: 20px;
+  padding: 10px;
+  background: linear-gradient(white, rgb(224, 224, 224));
+  border-radius: 10px;
+  justify-content: center;
+  align-content: center;
+  border: 1px solid rgb(204, 204, 204);
+}
+.profile_logo {
   float: left;
+  margin: 20px;
+  padding: 20px;
+  width: 170px;
+  height: 170px;
 }
-.logo{
-  height: 150px;
-  width: 150px;
+.profile {
   float: left;
+  border-radius: 10px;
+  text-align: left;
 }
-.info{
-  float: left;
+.order_status {
+  border-radius: 10px;
+  border: 1px solid rgb(204, 204, 204);
+  background: linear-gradient(white, rgb(203, 253, 206));
+  text-align: center;
 }
-.aside {
-  width: 15%;
-  height: 80%;
-  float: left;  
-  padding-top: 20px;
-  padding-left: 20px;
-  margin-top: 20px;
-  margin-left: 20px;
+.member_points {
+  border-radius: 10px;
+  border: 1px solid rgb(204, 204, 204);
+  background: linear-gradient(white, rgb(255, 198, 198));
+  text-align: center;
 }
-.nav {
-  height:80%;
-  padding-top: 20px;
-  padding-left: 20px;
-  margin-top: 20px;
-  margin-left: 20px;
+.member_list {
+  border-radius: 10px;
+  border: 1px solid rgb(204, 204, 204);
+  background: linear-gradient(white, rgb(250, 226, 208));
+  text-align: center;
+}
+.profile_img {
+  border-radius: 100%;
+  width: 170px;
+  height: 170px;
+}
+.order_img {
+  background: grey;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+}
+.list_img {
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+}
+.points_img {
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
 }
 .main {
-  width: 80%;
-  height: 70%;
-  float: left;  
-  padding-top: 20px;
-  padding-left: 20px;
-  margin-top: 20px;
-  margin-left: 20px;
+  border-radius: 10px;
+  background: linear-gradient(white, rgb(241, 241, 241));
+  text-align: center;
+  margin: 10px;
+  padding: 30px;
+  grid-column: 2/6;
 }
-
-.Section{
-    width:80%;
-    height:100%;
-    position: relative;
-    margin:auto;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+.category {
+  border-radius: 10px;
+  background: linear-gradient(white, rgb(241, 241, 241));
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+.nav {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
 }

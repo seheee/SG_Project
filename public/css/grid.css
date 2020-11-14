@@ -1,9 +1,10 @@
 .row {
+  position: relative;
   width: 100%;
-  margin-top: 10px;
-  margin-left: 10px;
-  padding-top: 10px;
-  padding-left: 10px;
+  margin-top: 30px;
+  margin-left: 30px;
+  padding-top: 50px;
+  padding-left: 50px;
   display: flex;
   flex-wrap: wrap;
 
