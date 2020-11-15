@@ -5,7 +5,7 @@ export const dbOptions = {
   password: "960713hj",
   database: "sgproject",
 }
-const connection = mysql.createConnection(dbOptions);
+export const connection = mysql.createConnection(dbOptions);
 connection.connect(()=>{
     console.log("DB connect OK")
 });

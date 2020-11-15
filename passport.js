@@ -2,9 +2,12 @@ import passport, { serializeUser } from "passport";
 import local from "passport-local";
 import mysql from "mysql";
 import { dbOptions } from "./db";
+import "./config"
+import crypto from "crypto"
 
 const LocalStrategy = local.Strategy;
 const connectedMysql = mysql.createConnection(dbOptions)
+const KEY = process.env.CRYPTO_KEY;
 passport.use(
   new LocalStrategy(
     {
@@ -12,8 +15,14 @@ passport.use(
       passwordField: "pwd",
     },
     function (username, password, done) {
+      
+      const cipher = crypto.createCipher('aes-256-cbc', KEY);
+      let result = cipher.update(password, 'utf8', 'base64'); // 'HbMtmFdroLU0arLpMflQ'
+      result += cipher.final('base64'); // 'HbMtmFdroLU0arLpMflQYtt8xEf4lrPn5tX5k+a8Nzw='
+
+      
       var sql = "SELECT * FROM USER WHERE EMAIL=? AND PWD=?";
-      connectedMysql.query(sql, [username, password], function (err, result) {
+      connectedMysql.query(sql, [username, result], function (err, result) {
         if (err) console.log("mysql 에러");
 
         // 입력받은 ID와 비밀번호에 일치하는 회원정보가 없는 경우
