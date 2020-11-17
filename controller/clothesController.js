@@ -1,6 +1,6 @@
 import express from "express";
 import {} from "../routes";
-import {connection} from "../app";
+import {connection} from "../db"
 
 //디비 작업은 이곳에서
 export const clothesController = (req, res) => {
