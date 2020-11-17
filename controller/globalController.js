@@ -81,8 +81,8 @@ export const uploadController = (req, res) => {
     if (error) throw error;
     console.log("Upload Successful");
   });
-  res.render("admin.html");
+  res.render("admin.ejs");
 };
 export const adminController = (req, res) => {
-  res.render("admin.html");
+  res.render("admin.ejs");
 };
