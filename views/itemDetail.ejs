@@ -11,42 +11,77 @@
     <header>
       <div class="headerRow">
         <div class="headerColumn">
-          <a href="./home.html">
+          <a href="./">
             <img src="../img/home.svg" />
           </a>
         </div>
         <div class="headerColumn">
-          <a href="./home.html">
+          <a href="./">
             <h2>SHOP</h2>
           </a>
         </div>
+        <% if(loggedUser){ %>
         <div class="headerColumn">
           <a href="https://www.instagram.com/juunzzi/">
             <img src="../img/search.svg" />
           </a>
-          <a href="./singIn.html">
-            <span id="Login">Login</span>
+          <a href="<%=routes.logout%>">
+            <span id="Login">Logout</span>
           </a>
-          <a href="./mypage.html">
+          <a href="<%=routes.userDetail(loggedUser.id)%>">
             <span id="mypage">MyPage</span>
           </a>
-          <a href="./cart.html">
+          <a href="<%=routes.shoppingBasket(loggedUser.id)%>">
             <span id="cart">Cart</span>
           </a>
         </div>
-      </div><br>
+        <% }else{ %>
+        <div class="headerColumn">
+          <a href="https://www.instagram.com/juunzzi/">
+            <img src="../img/search.svg" />
+          </a>
+          <a href="<%=routes.login%>">
+            <span id="Login">Login</span>
+          </a>
+          <a href="<%=routes.join%>">
+            <span id="Login">Join</span>
+          </a>
+
+         
+        </div>
+        <% } %>
+      </div>
+      <br />
       <div class="headerRow">
-        <div class="headerColumn"><a href="./products.html"><span>OUTER</span></a></div>
-        <div class="headerColumn"><a href="./products.html"><span>TOP</span></a></div>
-        <div class="headerColumn"><a href="./products.html"><span>BOTTOM</span></a></div>
-        <div class="headerColumn"><a href="./products.html"><span>SHOES</span></a></div>
-      </div><br><br>
+        <div class="headerColumn">
+          <a href="./products.html"><span>OUTER</span></a>
+        </div>
+        <div class="headerColumn">
+          <a href="./products.html"><span>TOP</span></a>
+        </div>
+        <div class="headerColumn">
+          <a href="./products.html"><span>BOTTOM</span></a>
+        </div>
+        <div class="headerColumn">
+          <a href="./products.html"><span>SHOES</span></a>
+        </div>
+      </div>
+      <br /><br />
       <div class="headerRow">
-        <div class="headerColumn"><a href="./sale.html"><span>SALE</span></a></div>
-        <div class="headerColumn"><a href="./popular.html"><span>POPULAR</span></a></div>
-        <div class="headerColumn"><a href="./sale.html"><span>SALE</span></a></div>
-        <div class="headerColumn"><a href="./popular.html"><span>POPULAR</span></a></div>
-      </div><br>
+        <div class="headerColumn">
+          <a href="./sale.html"><span>SALE</span></a>
+        </div>
+        <div class="headerColumn">
+          <a href="./popular.html"><span>POPULAR</span></a>
+        </div>
+        <div class="headerColumn">
+          <a href="./sale.html"><span>SALE</span></a>
+        </div>
+        <div class="headerColumn">
+          <a href="./popular.html"><span>POPULAR</span></a>
+        </div>
+      </div>
+      <br />
     </header>
     <div class="Section">
       <div class="clothesDetailImg">

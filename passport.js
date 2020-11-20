@@ -6,7 +6,7 @@ import "./config"
 import crypto from "crypto"
 
 const LocalStrategy = local.Strategy;
-const connectedMysql = mysql.createConnection(dbOptions)
+const connectedMysql = mysql.createConnection(dbOptions) // 수정할것
 const KEY = process.env.CRYPTO_KEY;
 passport.use(
   new LocalStrategy(

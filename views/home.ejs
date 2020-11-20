@@ -25,13 +25,13 @@
           <a href="https://www.instagram.com/juunzzi/">
             <img src="../img/search.svg" />
           </a>
-          <a href="./logout">
+          <a href="<%=routes.logout%>">
             <span id="Login">Logout</span>
           </a>
-          <a href="./mypage.html">
+          <a href="<%=routes.userDetail(loggedUser.id)%>">
             <span id="mypage">MyPage</span>
           </a>
-          <a href="./cart.html">
+          <a href="<%=routes.shoppingBasket(loggedUser.id)%>">
             <span id="cart">Cart</span>
           </a>
         </div>
@@ -40,16 +40,14 @@
           <a href="https://www.instagram.com/juunzzi/">
             <img src="../img/search.svg" />
           </a>
-          <a href="./login">
+          <a href="<%=routes.login%>">
             <span id="Login">Login</span>
           </a>
-          <a href="./join">
+          <a href="<%=routes.join%>">
             <span id="Login">Join</span>
           </a>
 
-          <a href="./cart.html">
-            <span id="cart">Cart</span>
-          </a>
+         
         </div>
         <% } %>
       </div>
