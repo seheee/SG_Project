@@ -61,7 +61,7 @@
             <% datas["data_outer"].forEach(function (item,index){ %>
               <section class="product">
                 <div class="each-product">
-                  <a href="itemDetail.html">
+                  <a href="/clothes/<%= item.idx %>">
                     <img src="<%= item.main_img %>" style="width:100%">
                     <p class="product_name"><%= item.name %></p>
                     <% if(item.discount == 0) { %>
@@ -89,7 +89,7 @@
             <% datas["data_top"].forEach(function (item,index){ %>
               <section class="product">
                 <div class="each-product">
-                  <a href="itemDetail.html">
+                  <a href="/clothes/<%= item.idx %>">
                     <img src="<%= item.main_img %>" style="width:100%">
                     <p class="product_name"><%= item.name %></p>
                     <% if(item.discount == 0) { %>
@@ -116,7 +116,7 @@
             <% datas["data_bottom"].forEach(function (item,index){ %>
               <section class="product">
                 <div class="each-product">
-                  <a href="itemDetail.html">
+                  <a href="/clothes/<%= item.idx %>">
                     <img src="<%= item.main_img %>" style="width:100%">
                     <p class="product_name"><%= item.name %></p>
                     <% if(item.discount == 0) { %>
@@ -143,7 +143,7 @@
             <% datas["data_shoes"].forEach(function (item,index){ %>
               <section class="product">
                 <div class="each-product">
-                  <a href="itemDetail.html">
+                  <a href="/clothes/<%= item.idx %>">
                     <img src="<%= item.main_img %>" style="width:100%">
                     <p class="product_name"><%= item.name %></p>
                     <% if(item.discount == 0) { %>
