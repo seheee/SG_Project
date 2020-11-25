@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="utf-8">
       <title>SG_SaleItems</title>
       <link rel="stylesheet" href="../css/header.css" />
       <link rel="stylesheet" href="../css/footer.css" />
@@ -37,10 +36,10 @@
         </div>
       </div><br>
       <div class="headerRow">
-        <div class="headerColumn"><a href="./outer"><span>OUTER</span></a></div>
-        <div class="headerColumn"><a href="./top"><span>TOP</span></a></div>
-        <div class="headerColumn"><a href="./bottom"><span>BOTTOM</span></a></div>
-        <div class="headerColumn"><a href="./shoes"><span>SHOES</span></a></div>
+        <div class="headerColumn"><a href="./clothes/outer"><span>OUTER</span></a></div>
+        <div class="headerColumn"><a href="./clothes/top"><span>TOP</span></a></div>
+        <div class="headerColumn"><a href="./clothes/bottom"><span>BOTTOM</span></a></div>
+        <div class="headerColumn"><a href="./clothes/shoes"><span>SHOES</span></a></div>
       </div><br><br>
       <div class="headerRow">
         <div class="headerColumn"><a href="./sale.html"><span>SALE</span></a></div>
@@ -50,12 +49,12 @@
       </div><br>
     </header>
       <div class="row">
-        <h3 id="category"></h3>
+        <h3>Sale Items</h3>
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
           <!--<div class="text">Outer</div><br>-->
           <div class="products">
-            <% data.forEach(function (item,index){ %>
+            <% data.forEach(function (item,index) { %>
               <section class="product">
                 <div class="each-product">
                   <a href="itemDetail.html">
@@ -71,8 +70,8 @@
                 </a>
                 </div>
               </section>
-            <% })%>
-            
+            <% }) %>
+           
           </div>       
         </div>
       </div>
@@ -81,7 +80,10 @@
       <footer>
         <span>&copy;copyright by supergreat</span>
       </footer>
-
+    
+    <script>
+     
+    </script>
   </body>
 </html>
 

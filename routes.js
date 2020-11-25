@@ -18,6 +18,7 @@ const CLOTHES_TOP = "/clothes/top"
 const CLOTHES_BOTTOM = "/clothes/bottom"
 const CLOTHES_SHOES = "/clothes/shoes"
 const CLOTHES_POPULAR = "/clothes/popular"
+const CLOTHES_SALE = "/clothes/sale"
 const CLOTHES_DETAIL = "/clothes/:id"
 
 const UPLOAD = "/upload"
@@ -41,6 +42,7 @@ export const routes = {
     clothesBottom:CLOTHES_BOTTOM,
     clothesShoes:CLOTHES_SHOES,
     clothesPopular:CLOTHES_POPULAR,
+    clothesSale:CLOTHES_SALE,
     clothesDetail:CLOTHES_DETAIL,
     upload:UPLOAD,
     admin:ADMIN
