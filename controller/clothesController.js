@@ -1,4 +1,4 @@
-import express from "express";
+import express, { query } from "express";
 import {} from "../routes";
 import {connection} from "../db"
 
@@ -8,12 +8,27 @@ export const clothesController = (req, res) => {
 };
 export const clothesOuterController = (req, res) => {
     //Outer라우터로 이동하면 Outer 프로덕트만 보여주는 html렌더링
-    var limit = 20;
-    var page = req.query.page;
-    var offset = (page - 1) * limit;
-    var queryString = 'select * from product where category="outer" order by idx desc orders limit '+limit+' offset '+offset;
-    connection.query(queryString, function (error, result) {
-       res.render('products.ejs', {data: result});
+    var pageSize = 16;
+    var pageListSize = 0;
+    var totalCnt = 0;
+    var queryString = 'select count(*) as cnt from product where category="'+req.params.category+'"';
+    connection.query(queryString, function(error, data) {
+        totalCnt = data[0].cnt;
+        var curPage = req.params.cur;
+        var pageListSize = Math.ceil(totalCnt / pageSize);
+        var limit = (curPage - 1) * pageSize;
+        var result2 = {
+            "pageSize": pageSize,
+            "pageListSize": pageListSize,
+            "totalCnt": totalCnt,
+        }
+        queryString = 'select * from product where category="'+req.params.category+'" order by idx desc limit ?,?'
+        connection.query(queryString, [limit, pageSize], function(err, result) {
+            res.render('products.ejs', {
+                data: result,
+                pasing: result2
+            });
+        })  
     })
 };
 export const clothesTopController = (req, res) => {
