@@ -20,7 +20,7 @@ const CLOTHES_SHOES = "/clothes/shoes"
 const CLOTHES_POPULAR = "/clothes/popular"
 const CLOTHES_DETAIL = "/clothes/:id"
 
-const order = "/order"
+const ORDER = "/order"
 const UPLOAD = "/upload"
 const ADMIN = "/admin"
 export const routes = {
