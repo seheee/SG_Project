@@ -4,6 +4,8 @@ export const dbOptions = {
   user: "root",
   password: "960713hj",
   database: "sgproject",
+  multipleStatements:true
+  
 }
 export const connection = mysql.createConnection(dbOptions);
 connection.connect(()=>{

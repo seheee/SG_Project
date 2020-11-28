@@ -46,8 +46,6 @@
           <a href="<%=routes.join%>">
             <span id="Login">Join</span>
           </a>
-
-         
         </div>
         <% } %>
       </div>
@@ -85,32 +83,41 @@
     </header>
     <div class="Section">
       <div class="clothesDetailImg">
-        <img src="https://image.msscdn.net/images/goods_img/20191028/1204448/1204448_2_500.jpg">
+        <img src="../<%=result[0].main_img%>" />
       </div>
       <div class="clothesDetailText">
         <div class="clothesInfo">
-          <span>
-            제품명
-          </span>
-          <span>
-            제품명
-          </span>
-          <span>
-            제품명
-          </span>
-          <span>
-            제품명
-          </span>
-          <span>
-            제품명
-          </span>
-          <span>
-            제품명
-          </span>
+          <div class="clothesText">
+            <span> 제품명: </span>
+            <span> <%=result[0].name%> </span>
+          </div>
+          <div class="clothesText">
+            <span> 카테고리: </span>
+            <span> <%=result[0].category%> </span>
+          </div>
+          <div class="clothesText">
+            <span> 제품가격: </span>
+            <span> <%=result[0].price%> </span>
+          </div>
+          <div class="clothesText">
+            <span> 제품수량: </span>
+            <span> <%=result[0].stock%> </span>
+          </div>
+          <div class="clothesText">
+            <span
+              style="
+                background-color: white;
+                border-radius: 20px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                padding:20px;
+              "
+              ><a href="<%=routes.insertCart(result[0].idx) %>">장바구니 담기</a></span
+            >
+          </div>
         </div>
-       
       </div>
     </div>
+
     <footer>
       <span>copyrightⓒ by supergreat</span>
     </footer>

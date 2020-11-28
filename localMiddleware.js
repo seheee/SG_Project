@@ -4,7 +4,6 @@ export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "sgSHOP";
   res.locals.routes = routes;
   res.locals.loggedUser = req.user || null;
-
   next();
 };
 

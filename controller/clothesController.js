@@ -1,6 +1,6 @@
 import express from "express";
-import {} from "../routes";
-import {connection} from "../app";
+import { routes } from "../routes";
+import {connection} from "../db";
 
 //디비 작업은 이곳에서
 export const clothesController = (req, res) => {
@@ -42,7 +42,26 @@ export const clothesPopularController = (req, res) => {
     })
 };
 
-export const clothesDetailController = (req, res) => {
+export const clothesDetailController = async(req, res) => {
     //옷 각개로 상세하게 보여주는 화면 html 렌더링
+    const {url}=req;
+    const productId = url.split('/')[2];
+    const queryString = `select * from Product where idx=${productId}`
+    await connection.query(queryString,(err,result)=>{
+        if(err) throw err;
+        res.render('itemDetail.ejs',{result:result})
+    })
 };
-
+export const insertCartController = async(req,res)=>{
+    const {url}=req;
+    const {
+        user: { id },
+      } = req;
+    const productId = url.split('/')[2];
+    const queryString = `insert into cart(user_id,product_idx) values(${id},${productId});`
+    await connection.query(queryString,(err,result)=>{
+        if(err)throw err
+        
+        res.redirect(routes.clothesDetail(productId))
+    })
+}

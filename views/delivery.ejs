@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-      <title>SG_DeliveryTracking</title>
-      <link rel="stylesheet" href="/css/home.css" />
-      <link rel="stylesheet" href="/css/footer.css" />
-      <link rel="stylesheet" href="/css/sale.css" />
-      <link rel="stylesheet" href="/css/reset.css" />
+    <title>SG_Cart</title>
+    <link rel="stylesheet" href="/css/cart.css" />
+    <link rel="stylesheet" href="/css/grid.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
   </head>
-  <body>
 
-    <div class="container">
-      <header>
+  <body>
+    <header>
         <div class="headerRow">
           <div class="headerColumn">
             <a href="./">
@@ -85,91 +85,47 @@
         </div>
         <br />
       </header>
-      <div class="row">
-        <h3>Sale Items</h3>
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-          <!--<div class="text">Outer</div><br>-->
-          <div class="products">
-            <section class="product">
-              <div class="each-product">
-                <img src="./img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <img src="./img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <img src="./img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <img src="./img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <img src="./img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <img src="./img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <img src="./img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <img src="./img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </div>
-            </section>
-          </div>       
-        </div>
-      </div>
-      <br>
       
-      <footer>
-        <span>&copy;copyright by supergreat</span>
-      </footer>
+      <div class="itemContainer">
+        <span style="font-size: 30px;margin-bottom:20px;">당신의 주문내역입니다.</span>
+        <div class="item">
+          <div class="itemImage" style="border:1px solid rgba(0,0,0,0.1); border-radius: 30px;">상품이미지</div>
+            <div class="itemName" style="border:1px solid rgba(0,0,0,0.1); border-radius: 30px;">상품 이름</div>
+            <div class="itemCategory" style="border:1px solid rgba(0,0,0,0.1); border-radius: 30px;">주문상태</div>
+            <div class="itemPrice" style="border:1px solid rgba(0,0,0,0.1); border-radius: 30px;">결제금액</div>
+            <div class="itemDiscount" style="border:1px solid rgba(0,0,0,0.1); border-radius: 30px;">주문날짜</div>
+            <div class="itemDiscount" style="border:1px solid rgba(0,0,0,0.1); border-radius: 30px;">삭제하기</div>
+        
+          </div>
+        <% for(var i=0;i<length;i++){%>
+          <div class="item">
+            <div class="itemImage" style="height: 100%;">
+              <img src="../<%=result[i][0].main_img %>" style="width:100%;height:100%">
+            
+            </div>
+            <div class="itemName"><%=result[i][0].name%></div>
+            <div class="itemCategory">
+              <%=orders[i].order_status%>
+            </div>
+            <div class="itemPrice"><%=result[i][0].price%>원</div>
+            <div class="itemDiscount">
+              <%=orders[i].order_date%>
+            </div>
+            <div class="itemDelete">
+              <a href>X</a>
+             </div>
+          </div>
+          <% } %>
+          
+      </div>
+      
+      <div class="orderButton row"></div>
+      
+      <!-- Mypage header section -->
     </div>
-    <script>
-     
-    </script>
+
+    <footer>
+      <span>copyrightⓒ by supergreat</span>
+    </footer>
   </body>
 </html>
-
-
-
- 

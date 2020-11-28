@@ -11,3 +11,4 @@ userRouter.get(routes.changePassword,changePasswordController)//비밀번호 변
 userRouter.get(routes.shoppingBasket(),shoppingBasketController)//장바구니
 userRouter.get(routes.deliveryCheck(),deliveryCheckController)// 전체 상품 배송조회 상황
 userRouter.get(routes.detailDeliveryCheck,detailDeliveryCheckController)//상세 상품 배송조회
+userRouter.get(routes.insertCart)

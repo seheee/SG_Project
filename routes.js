@@ -61,7 +61,20 @@ export const routes = {
   clothesBottom: CLOTHES_BOTTOM,
   clothesShoes: CLOTHES_SHOES,
   clothesPopular: CLOTHES_POPULAR,
-  clothesDetail: CLOTHES_DETAIL,
+  clothesDetail: (id)=>{
+    if(id){
+      return `/clothes/${id}`
+    }else{
+      return CLOTHES_DETAIL
+    }
+  },
+  insertCart:(id)=>{
+    if(id){
+      return `/clothes/${id}/insertCart`
+    }else{
+      return `/clothes/:id/insertCart`
+    }
+  },
   upload: UPLOAD,
   admin: ADMIN,
 };

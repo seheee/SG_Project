@@ -20,6 +20,17 @@
     justify-items: center;
 }
 .clothesInfo{
+    width:100%;
+    height:100%;
     display: flex;
     flex-direction: column;
+}
+
+.clothesText{
+    width:100%;
+    height:25%;
+    display :flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
 }
