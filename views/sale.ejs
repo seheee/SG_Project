@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="utf-8">
-      <title>SG_Items</title>
+      <title>SG_SaleItems</title>
       <link rel="stylesheet" href="/css/header.css" />
       <link rel="stylesheet" href="/css/footer.css" />
       <link rel="stylesheet" href="/css/sale.css" />
@@ -50,16 +49,16 @@
       </div><br>
     </header>
       <div class="row">
-        <h3 id="category"></h3>
+        <h3>Sale Items</h3>
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
           <!--<div class="text">Outer</div><br>-->
           <div class="products">
-            <% data.forEach(function (item,index){ %>
+            <% data.forEach(function (item,index) { %>
               <section class="product">
                 <div class="each-product">
                   <a href="/clothes/<%= item.idx %>">
-                  <img src="../<%= item.main_img %>" style="width:100%">
+                  <img src="<%= item.main_img %>" style="width:100%">
                   <p class="product_name"><%= item.name %></p>
                   <% if(item.discount == 0) { %>
                     <p class="product_price"><%= item.price%></p>
@@ -71,29 +70,20 @@
                 </a>
                 </div>
               </section>
-            <% })%>
-            
+            <% }) %>
+           
           </div>       
         </div>
       </div>
       <br>
-      <% var pageSize = pasing.pageSize %>
-      <% var pageListSize = pasing.pageListSize %>
-      <% var totalCnt = pasing.totalCnt %>
-      <div class="page">
-        <ul>
-        <% for(var i = 0; i<pageListSize; i++) { %>
-          <li id="page" value=<%= i+1 %> class='' >
-            <a href='../outer/<%= i+1 %>'><%= i+1 %></a>
-          </li>
-        <% } %>
-        </ul>
-      </div>
       
       <footer>
         <span>&copy;copyright by supergreat</span>
       </footer>
-
+    
+    <script>
+     
+    </script>
   </body>
 </html>
 
