@@ -85,7 +85,7 @@ export const clothesSaleController = (req, res) => {
        res.render('sale.ejs', {data: result});
     })
 };
-export const clothesDetailController = (req, res) => {
+export const clothesDetailController = async(req, res) => {
     //옷 각개로 상세하게 보여주는 화면 html 렌더링
     const {url}=req;
     const productId = url.split('/')[2];

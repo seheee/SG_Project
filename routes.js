@@ -23,6 +23,7 @@ const CLOTHES_POPULAR = "/clothes/popular";
 const CLOTHES_SALE = "/clothes/sale";
 const CLOTHES_DETAIL = "/clothes/:id";
 
+const ORDER = "/order"
 const UPLOAD = "/upload";
 const ADMIN = "/admin";
 export const routes = {
@@ -79,4 +80,5 @@ export const routes = {
   },
   upload: UPLOAD,
   admin: ADMIN,
+  order: ORDER
 };

@@ -47,7 +47,7 @@ export const postJoinController = async (req, res, next) => {
     result1 += cipher.final("base64"); // 'HbMtmFdroLU0arLpMflQYtt8xEf4lrPn5tX5k+a8Nzw='
     ///암호화 작업
 
-    const queryString = `insert into User(id,name,email,pwd,gender,addr) values ('${idCount}','${name}','${email}','${result1}','${sex}','${addr}');`;
+    const queryString = `insert into User(id,name,mail,pwd,gender,addr) values ('${idCount}','${name}','${email}','${result1}','${sex}','${addr}');`;
     await connection.query(queryString, function (error, result) {
       if (error) throw error;
       console.log("회원가입 성공");
