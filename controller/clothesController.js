@@ -26,7 +26,7 @@ export const clothesOuterController = (req, res) => {
         connection.query(queryString, [limit, pageSize], function(err, result) {
             res.render('products.ejs', {
                 data: result,
-                pasing: result2
+                page: result2
             });
         })  
     })
@@ -88,11 +88,13 @@ export const clothesSaleController = (req, res) => {
 export const clothesDetailController = async(req, res) => {
     //옷 각개로 상세하게 보여주는 화면 html 렌더링
     const {url}=req;
-    const productId = url.split('/')[3];
+    const productId = url.split('/')[2];
     console.log(productId);
     const queryString = `select * from product where idx=${productId}`
+    console.log()
     await connection.query(queryString,(err,result)=>{
         if(err) throw err;
+        console.log("detail");
         res.render('itemDetail.ejs',{result:result})
     })
 };

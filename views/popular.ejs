@@ -10,45 +10,8 @@
       <script src='/js/slide.js'></script>
   </head>
   <body>
-    <header class="row">
-      <div class="headerRow">
-        <div class="headerColumn">
-          <a href="/">
-            <img src="/img/home.svg" />
-          </a>
-        </div>
-        <div class="headerColumn">
-          <a href="/">
-            <h2>SHOP</h2>
-          </a>
-        </div>
-        <div class="headerColumn">
-          <a href="https://www.instagram.com/juunzzi/">
-            <img src="/img/search.svg" />
-          </a>
-          <a href="/login">
-            <span id="Login">Login</span>
-          </a>
-          <a href="./mypage.html">
-            <span id="mypage">MyPage</span>
-          </a>
-          <a href="./cart.html">
-            <span id="cart">Cart</span>
-          </a>
-        </div>
-      </div><br>
-      <div class="headerRow">
-        <div class="headerColumn"><a href="/clothes/outer/1"><span>OUTER</span></a></div>
-        <div class="headerColumn"><a href="/clothes/top/1"><span>TOP</span></a></div>
-        <div class="headerColumn"><a href="/clothes/bottom/1"><span>BOTTOM</span></a></div>
-        <div class="headerColumn"><a href="/clothes/shoes/1"><span>SHOES</span></a></div>
-      </div><br><br>
-      <div class="headerRow">
-        <div class="headerColumn"><a href="/clothes/sale"><span>SALE</span></a></div>
-        <div class="headerColumn"><a href="/clothes/popular"><span>POPULAR</span></a></div>
-        <div class="headerColumn"><a href="/clothes/sale"><span>SALE</span></a></div>
-        <div class="headerColumn"><a href="/clothes/popular"><span>POPULAR</span></a></div>
-      </div><br>
+    <header>
+      <%- include('./header');%>
     </header>
       
       <div class="row">
@@ -61,7 +24,7 @@
             <% datas["data_outer"].forEach(function (item,index){ %>
               <section class="product">
                 <div class="each-product">
-                  <a href="/clothes/<%= item.idx %>">
+                  <a href="/clothes/detail/<%= item.idx %>">
                     <img src="<%= item.main_img %>" style="width:100%">
                     <p class="product_name"><%= item.name %></p>
                     <% if(item.discount == 0) { %>
@@ -89,7 +52,7 @@
             <% datas["data_top"].forEach(function (item,index){ %>
               <section class="product">
                 <div class="each-product">
-                  <a href="/clothes/<%= item.idx %>">
+                  <a href="/clothes/detail/<%= item.idx %>">
                     <img src="<%= item.main_img %>" style="width:100%">
                     <p class="product_name"><%= item.name %></p>
                     <% if(item.discount == 0) { %>
@@ -116,7 +79,7 @@
             <% datas["data_bottom"].forEach(function (item,index){ %>
               <section class="product">
                 <div class="each-product">
-                  <a href="/clothes/<%= item.idx %>">
+                  <a href="/clothes/detail/<%= item.idx %>">
                     <img src="<%= item.main_img %>" style="width:100%">
                     <p class="product_name"><%= item.name %></p>
                     <% if(item.discount == 0) { %>
@@ -143,7 +106,7 @@
             <% datas["data_shoes"].forEach(function (item,index){ %>
               <section class="product">
                 <div class="each-product">
-                  <a href="/clothes/<%= item.idx %>">
+                  <a href="/clothes/detail/<%= item.idx %>">
                     <img src="<%= item.main_img %>" style="width:100%">
                     <p class="product_name"><%= item.name %></p>
                     <% if(item.discount == 0) { %>
