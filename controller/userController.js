@@ -8,7 +8,7 @@ export const userDetailController = async (req, res) => {
   const {
     user: { id },
   } = req;
-  const idQueryString = `select * from Orders where user_id = ${id}`;
+  const idQueryString = `select * from orders where user_id = ${id}`;
   await connection.query(idQueryString, async (error, result) => {
     if(error) throw error;
     
@@ -29,13 +29,13 @@ export const shoppingBasketController = async (req, res) => {
   const {
     user: { id },
   } = req;
-  const idQueryString = `select * from Cart where user_id = ${id}`;
+  const idQueryString = `select * from cart where user_id = ${id}`;
   await connection.query(idQueryString, async (error, result) => {
     if (error) throw error;
     let productQueryString = "";
     result.forEach(
       (item) =>
-        (productQueryString += `select * from Product where idx=${item.product_idx};`)
+        (productQueryString += `select * from product where idx=${item.product_idx};`)
     );
     await connection.query(productQueryString, async (error, result) => {
       if (error) throw error;
@@ -51,14 +51,14 @@ export const deliveryCheckController = async (req, res) => {
     user: { id },
   } = req;
   console.log(id);
-  const idQueryString = `select * from Orders where user_id = ${id}`;
+  const idQueryString = `select * from orders where user_id = ${id}`;
   await connection.query(idQueryString, async (error, result) => {
     if (error) throw error;
     let ordersQueryString = "";
     const orders = result;
     result.forEach(
       (item) =>
-        (ordersQueryString += `select * from Product where idx=${item.product_idx};`)
+        (ordersQueryString += `select * from product where idx=${item.product_idx};`)
     );
     await connection.query(ordersQueryString, async (error, result) => {
       if (error) throw error;

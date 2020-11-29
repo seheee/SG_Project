@@ -21,7 +21,7 @@ passport.use(
       result += cipher.final('base64'); // 'HbMtmFdroLU0arLpMflQYtt8xEf4lrPn5tX5k+a8Nzw='
 
       
-      var sql = "SELECT * FROM USER WHERE EMAIL=? AND PWD=?";
+      var sql = "SELECT * FROM user WHERE mail=? AND pwd=?";
       connectedMysql.query(sql, [username, result], function (err, result) {
         if (err) console.log("mysql 에러");
 
@@ -33,6 +33,7 @@ passport.use(
           console.log("로그인 성공")
           var json = JSON.stringify(result[0]);
           var userinfo = JSON.parse(json);
+          console.log(userinfo);
           return done(null, userinfo); // result값으로 받아진 회원정보를 return해줌
         }
       });
@@ -40,12 +41,12 @@ passport.use(
   )
 );
 passport.serializeUser(function (user, done) {
-  done(null, user.email);
+  done(null, user.mail);
 });
 
 passport.deserializeUser(function (id, done) {
   var userinfo;
-  var sql = "SELECT * FROM USER WHERE EMAIL=?";
+  var sql = "SELECT * FROM user WHERE mail=?";
   connectedMysql.query(sql, [id], function (err, result) {
     if (err) console.log("mysql 에러");
 

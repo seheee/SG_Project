@@ -21,7 +21,7 @@ const CLOTHES_BOTTOM = "/clothes/bottom";
 const CLOTHES_SHOES = "/clothes/shoes";
 const CLOTHES_POPULAR = "/clothes/popular";
 const CLOTHES_SALE = "/clothes/sale";
-const CLOTHES_DETAIL = "/clothes/:id";
+const CLOTHES_DETAIL = "/clothes/detail/:id";
 
 const ORDER = "/order"
 const UPLOAD = "/upload";
@@ -66,16 +66,16 @@ export const routes = {
   clothesSale: CLOTHES_SALE,
   clothesDetail: (id)=>{
     if(id){
-      return `/clothes/${id}`
+      return `/clothes/detail/${id}`
     }else{
       return CLOTHES_DETAIL
     }
   },
   insertCart:(id)=>{
     if(id){
-      return `/clothes/${id}/insertCart`
+      return `/clothes/detail/${id}/insertCart`
     }else{
-      return `/clothes/:id/insertCart`
+      return `/clothes/detail/:id/insertCart`
     }
   },
   upload: UPLOAD,

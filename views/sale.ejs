@@ -2,88 +2,51 @@
 <html lang="en">
   <head>
       <title>SG_SaleItems</title>
-      <link rel="stylesheet" href="../css/header.css" />
-      <link rel="stylesheet" href="../css/footer.css" />
-      <link rel="stylesheet" href="../css/sale.css" />
-      <link rel="stylesheet" href="../css/reset.css" />
+      <link rel="stylesheet" href="/css/header.css" />
+      <link rel="stylesheet" href="/css/footer.css" />
+      <link rel="stylesheet" href="/css/sale.css" />
+      <link rel="stylesheet" href="/css/reset.css" />
   </head>
   <body>
-    <header>
+    <header class="row">
       <div class="headerRow">
         <div class="headerColumn">
-          <a href="./">
-            <img src="../img/home.svg" />
+          <a href="/">
+            <img src="/img/home.svg" />
           </a>
         </div>
         <div class="headerColumn">
-          <a href="./">
+          <a href="/">
             <h2>SHOP</h2>
           </a>
         </div>
-        <% if(loggedUser){ %>
         <div class="headerColumn">
           <a href="https://www.instagram.com/juunzzi/">
-            <img src="../img/search.svg" />
+            <img src="/img/search.svg" />
           </a>
-          <a href="./logout">
-            <span id="Login">Logout</span>
+          <a href="/login">
+            <span id="Login">Login</span>
           </a>
-          <a href="<%=routes.userDetail(loggedUser.id)%>">
+          <a href="./mypage.html">
             <span id="mypage">MyPage</span>
           </a>
           <a href="./cart.html">
             <span id="cart">Cart</span>
           </a>
         </div>
-        <% }else{ %>
-        <div class="headerColumn">
-          <a href="https://www.instagram.com/juunzzi/">
-            <img src="../img/search.svg" />
-          </a>
-          <a href="./login">
-            <span id="Login">Login</span>
-          </a>
-          <a href="./join">
-            <span id="Login">Join</span>
-          </a>
-
-          <a href="./cart.html">
-            <span id="cart">Cart</span>
-          </a>
-        </div>
-        <% } %>
-      </div>
-      <br />
+      </div><br>
       <div class="headerRow">
-        <div class="headerColumn">
-          <a href="./products.html"><span>OUTER</span></a>
-        </div>
-        <div class="headerColumn">
-          <a href="./products.html"><span>TOP</span></a>
-        </div>
-        <div class="headerColumn">
-          <a href="./products.html"><span>BOTTOM</span></a>
-        </div>
-        <div class="headerColumn">
-          <a href="./products.html"><span>SHOES</span></a>
-        </div>
-      </div>
-      <br /><br />
+        <div class="headerColumn"><a href="/clothes/outer/1"><span>OUTER</span></a></div>
+        <div class="headerColumn"><a href="/clothes/top/1"><span>TOP</span></a></div>
+        <div class="headerColumn"><a href="/clothes/bottom/1"><span>BOTTOM</span></a></div>
+        <div class="headerColumn"><a href="/clothes/shoes/1"><span>SHOES</span></a></div>
+      </div><br><br>
       <div class="headerRow">
-        <div class="headerColumn">
-          <a href="./sale.html"><span>SALE</span></a>
-        </div>
-        <div class="headerColumn">
-          <a href="./popular.html"><span>POPULAR</span></a>
-        </div>
-        <div class="headerColumn">
-          <a href="./sale.html"><span>SALE</span></a>
-        </div>
-        <div class="headerColumn">
-          <a href="./popular.html"><span>POPULAR</span></a>
-        </div>
-      </div>
-      <br />
+        <div class="headerColumn"><a href="/clothes/sale"><span>SALE</span></a></div>
+        <div class="headerColumn"><a href="/clothes/popular"><span>POPULAR</span></a></div>
+        <div class="headerColumn"><a href="/clothes/sale"><span>SALE</span></a></div>
+        <div class="headerColumn"><a href="/clothes/popular"><span>POPULAR</span></a></div>
+      </div><br>
     </header>
       <div class="row">
         <h3>Sale Items</h3>
@@ -91,86 +54,24 @@
         <div class="mySlides fade">
           <!--<div class="text">Outer</div><br>-->
           <div class="products">
-            <section class="product">
-              <div class="each-product">
-                <a href="itemDetail.html">
-                <img src="../img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </a>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <a href="itemDetail.html">
-                <img src="../img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </a>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <a href="itemDetail.html">
-                <img src="../img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </a>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <a href="itemDetail.html">
-                <img src="../img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </a>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <a href="itemDetail.html">
-                <img src="../img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </a>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <a href="itemDetail.html">
-                <img src="../img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </a>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <a href="itemDetail.html">
-                <img src="../img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </a>
-              </div>
-            </section>
-            <section class="product">
-              <div class="each-product">
-                <a href="itemDetail.html">
-                <img src="../img/work-one.jpeg" style="width:100%">
-                <p class="product_name">name1</p>
-                <p class="product_price">50,000</p>
-                <p class="product_ex">product explanation</p>
-              </a>
-              </div>
-            </section>
+            <% data.forEach(function (item,index) { %>
+              <section class="product">
+                <div class="each-product">
+                  <a href="/clothes/<%= item.idx %>">
+                  <img src="<%= item.main_img %>" style="width:100%">
+                  <p class="product_name"><%= item.name %></p>
+                  <% if(item.discount == 0) { %>
+                    <p class="product_price"><%= item.price%></p>
+                  <% } else { %>
+                    <p class="product_price"><strike><%= item.price%></strike></p>
+                    <p class="product_discount">sale: <%= item.price * (1-item.discount/100)%> (<%= item.discount%>%)</p>
+                  <% }%>
+                  <p class="product_ex">product explanation</p>
+                </a>
+                </div>
+              </section>
+            <% }) %>
+           
           </div>       
         </div>
       </div>
@@ -185,7 +86,3 @@
     </script>
   </body>
 </html>
-
-
-
- 

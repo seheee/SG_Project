@@ -88,8 +88,9 @@ export const clothesSaleController = (req, res) => {
 export const clothesDetailController = async(req, res) => {
     //옷 각개로 상세하게 보여주는 화면 html 렌더링
     const {url}=req;
-    const productId = url.split('/')[2];
-    const queryString = `select * from Product where idx=${productId}`
+    const productId = url.split('/')[3];
+    console.log(productId);
+    const queryString = `select * from product where idx=${productId}`
     await connection.query(queryString,(err,result)=>{
         if(err) throw err;
         res.render('itemDetail.ejs',{result:result})
@@ -100,7 +101,7 @@ export const insertCartController = async(req,res)=>{
     const {
         user: { id },
       } = req;
-    const productId = url.split('/')[2];
+    const productId = url.split('/')[3];
     const queryString = `insert into cart(user_id,product_idx) values(${id},${productId});`
     await connection.query(queryString,(err,result)=>{
         if(err)throw err
