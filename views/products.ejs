@@ -2,29 +2,29 @@
 <html lang="en">
   <head>
       <meta charset="utf-8">
-      <title>SG_SaleItems</title>
-      <link rel="stylesheet" href="../css/header.css" />
-      <link rel="stylesheet" href="../css/footer.css" />
-      <link rel="stylesheet" href="../css/sale.css" />
-      <link rel="stylesheet" href="../css/reset.css" />
+      <title>SG_Items</title>
+      <link rel="stylesheet" href="/css/header.css" />
+      <link rel="stylesheet" href="/css/footer.css" />
+      <link rel="stylesheet" href="/css/sale.css" />
+      <link rel="stylesheet" href="/css/reset.css" />
   </head>
   <body>
     <header>
       <div class="headerRow">
         <div class="headerColumn">
-          <a href="./">
-            <img src="../img/home.svg" />
+          <a href="/">
+            <img src="/img/home.svg" />
           </a>
         </div>
         <div class="headerColumn">
-          <a href="./">
+          <a href="/">
             <h2>SHOP</h2>
           </a>
         </div>
         <% if(loggedUser){ %>
         <div class="headerColumn">
           <a href="https://www.instagram.com/juunzzi/">
-            <img src="../img/search.svg" />
+            <img src="/img/search.svg" />
           </a>
           <a href="./logout">
             <span id="Login">Logout</span>
@@ -56,35 +56,17 @@
       </div>
       <br />
       <div class="headerRow">
-        <div class="headerColumn">
-          <a href="./products.html"><span>OUTER</span></a>
-        </div>
-        <div class="headerColumn">
-          <a href="./products.html"><span>TOP</span></a>
-        </div>
-        <div class="headerColumn">
-          <a href="./products.html"><span>BOTTOM</span></a>
-        </div>
-        <div class="headerColumn">
-          <a href="./products.html"><span>SHOES</span></a>
-        </div>
-      </div>
-      <br /><br />
+        <div class="headerColumn"><a href="/clothes/outer/1"><span>OUTER</span></a></div>
+        <div class="headerColumn"><a href="/clothes/top/1"><span>TOP</span></a></div>
+        <div class="headerColumn"><a href="/clothes/bottom/1"><span>BOTTOM</span></a></div>
+        <div class="headerColumn"><a href="/clothes/shoes/1"><span>SHOES</span></a></div>
+      </div><br><br>
       <div class="headerRow">
-        <div class="headerColumn">
-          <a href="./sale.html"><span>SALE</span></a>
-        </div>
-        <div class="headerColumn">
-          <a href="./popular.html"><span>POPULAR</span></a>
-        </div>
-        <div class="headerColumn">
-          <a href="./sale.html"><span>SALE</span></a>
-        </div>
-        <div class="headerColumn">
-          <a href="./popular.html"><span>POPULAR</span></a>
-        </div>
-      </div>
-      <br />
+        <div class="headerColumn"><a href="/clothes/sale"><span>SALE</span></a></div>
+        <div class="headerColumn"><a href="/clothes/popular"><span>POPULAR</span></a></div>
+        <div class="headerColumn"><a href="/clothes/sale"><span>SALE</span></a></div>
+        <div class="headerColumn"><a href="/clothes/popular"><span>POPULAR</span></a></div>
+      </div><br>
     </header>
       <div class="row">
         <h3 id="category"></h3>
@@ -95,10 +77,15 @@
             <% data.forEach(function (item,index){ %>
               <section class="product">
                 <div class="each-product">
-                  <a href="itemDetail.html">
-                  <img src="<%= item.main_img %>" style="width:100%">
+                  <a href="/clothes/<%= item.idx %>">
+                  <img src="../<%= item.main_img %>" style="width:100%">
                   <p class="product_name"><%= item.name %></p>
-                  <p class="product_price"><%= item.price %></p>
+                  <% if(item.discount == 0) { %>
+                    <p class="product_price"><%= item.price%></p>
+                  <% } else { %>
+                    <p class="product_price"><strike><%= item.price%></strike></p>
+                    <p class="product_discount">sale: <%= item.price * (1-item.discount/100)%> (<%= item.discount%>%)</p>
+                  <% }%>
                   <p class="product_ex">product explanation</p>
                 </a>
                 </div>
@@ -109,14 +96,23 @@
         </div>
       </div>
       <br>
+      <% var pageSize = pasing.pageSize %>
+      <% var pageListSize = pasing.pageListSize %>
+      <% var totalCnt = pasing.totalCnt %>
+      <div class="page">
+        <ul>
+        <% for(var i = 0; i<pageListSize; i++) { %>
+          <li id="page" value=<%= i+1 %> class='' >
+            <a href='../outer/<%= i+1 %>'><%= i+1 %></a>
+          </li>
+        <% } %>
+        </ul>
+      </div>
       
       <footer>
         <span>&copy;copyright by supergreat</span>
       </footer>
-    
-    <script>
-     
-    </script>
+
   </body>
 </html>
 

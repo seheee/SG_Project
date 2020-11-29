@@ -86,8 +86,21 @@ export const uploadController = (req, res) => {
     if (error) throw error;
     console.log("Upload Successful");
   });
-  res.render("admin.html");
+  res.render("admin.ejs");
 };
 export const adminController = (req, res) => {
-  res.render("admin.html");
+  res.render("admin.ejs");
+};
+
+export const getOrderController = (req, res) => {
+  res.render("order.ejs");
+};
+export const postOrderController = (req, res) => {
+  var queryString =
+    "INSERT INTO order(idx, order_num, user_id, product_idx, product_cnt, date, order_status) VALUES(10, 20, ''userid'', ''product_idx'', 1, ''Wednesday'', ''Delivering'');"; 
+  connection.query(queryString, function (error, result) {
+    if (error) throw error;
+    console.log("order complete");
+  });
+  res.render("product.ejs");
 };

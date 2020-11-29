@@ -2,7 +2,7 @@ import mysql from "mysql";
 export const dbOptions = {
   host: "localhost",
   user: "root",
-  password: "960713hj",
+  password: "sehee",
   database: "sgproject",
   multipleStatements:true
   

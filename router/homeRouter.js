@@ -9,6 +9,8 @@ import {
   searchController,
   uploadController,
   adminController,
+  getOrderController,
+  postOrderController,
 } from "../controller/globalController";
 import { routes } from "../routes";
 
@@ -23,3 +25,5 @@ homeRouter.post(routes.join, postJoinController,getLoginController);// post join
 homeRouter.get(routes.search, searchController);
 homeRouter.post(routes.upload, uploadController);
 homeRouter.get(routes.admin, adminController);
+homeRouter.get(routes.order, getOrderController);
+homeRouter.post(routes.order, postOrderController);
