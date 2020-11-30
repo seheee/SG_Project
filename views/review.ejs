@@ -4,17 +4,16 @@
     <link rel="stylesheet" href="../public/css/header.css" />
     <link rel="stylesheet" href="../public/css/footer.css" />
     <link rel="stylesheet" href="../public/css/reset.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <!--bootstrap core -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
   </head>
 
   <body>
-    <div class="home">
       <header><%- include('./header');%></header>
 
       <div class="container">
@@ -46,9 +45,15 @@
             <% } %>
           </tbody>
         </table>
-      </div>
-
+    <form action="/action_page.php">
+        <div class="form-group">
+            <label for="comment">review 작성:</label>
+            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary float-right">Submit</button>
+    </form>
+    <br><br>
       <footer><%- include('./footer');%></footer>
-    </div>
+        </div>
   </body>
 </html>
