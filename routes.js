@@ -24,6 +24,7 @@ const CLOTHES_SALE = "/clothes/sale";
 const CLOTHES_DETAIL = "/clothes/detail/:id";
 
 const ORDER = "/order/:id";
+const ORDER_COMPLETE = "/order/:id/orderComplete";
 const UPLOAD = "/upload";
 const ADMIN = "/admin";
 export const routes = {
@@ -33,11 +34,12 @@ export const routes = {
   logout: LOGOUT,
   search: SEARCH,
   users: USERS,
-  order: (id) => {
+  order: ORDER,
+  orderComplete: (id) => {
     if (id) {
-      return `/order/${id}`;
+      return `/order/${id}/orderComplete`;
     } else {
-      return ORDER;
+      return ORDER_COMPLETE;
     }
   },
   userDetail: (id) => {
