@@ -1,173 +1,54 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <link rel="stylesheet" href="../public/css/review.css" />
-    <link rel="stylesheet" href="../public/css/grid.css" />
+  <head>
     <link rel="stylesheet" href="../public/css/header.css" />
     <link rel="stylesheet" href="../public/css/footer.css" />
     <link rel="stylesheet" href="../public/css/reset.css" />
-</head>
 
-<body>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
     <div class="home">
-        <header>
-            <%- include('./header');%>
-          </header>
+      <header><%- include('./header');%></header>
 
+      <div class="container">
+        <h2 class="text-center">Review</h2>
 
+        <table
+          class="table table-hover table-striped text-center"
+          style="border: 1px solid"
+        >
+          <thead class="table-striped">
+            <tr>
+              <th>번호</th>
+              <th>상품코드</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>별점</th>
+            </tr>
+          </thead>
 
+          <tbody>
+            <% for(var i=0;i<length;i++){ %>
+            <tr>
+              <th><%result[i][0].idx%></th>
+              <th><%result[i][0].product_idx%></th>
+              <th><%result[i][0].title%></th>
+              <th><%result[i][0].user_id%></th>
+              <th><%result[i][0].star%></th>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
 
-
-        <div class="Section">
-
-            <div class="row">
-                <div class="col-12 cart-title">
-                    <h2>My Cart</h2>
-                </div>
-            </div>
-            <div class="goodslist row">
-
-                <table>
-
-                    <thead>
-                        상품목록
-                        <tr>
-                            <th>
-                                <h2>번호</h2>
-                            </th>
-                            <th>
-                                <h2>상품명</h2>
-                            </th>
-                            <th>
-                                <h2>판매가</h2>
-                            </th>
-                            <th>
-                                <h2>제휴 할인</h2>
-                            </th>
-                            <th>
-                                <h2>수량</h2>
-                            </th>
-                            <th>
-                                <h2>주문금액</h2>
-                            </th>
-                            <th>
-                                <h2>배송비</h2>
-                            </th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>
-                                <h3>109893403249</h3>
-                            </td>
-                            <td>
-                                <h3>가을 패딩</h3>
-                            </td>
-                            <td>
-                                <h3>56000원</h3>
-                            </td>
-                            <td>
-                                <h3>-2000원</h3>
-                            </td>
-                            <td>
-                                <h3>1</h3>
-                            </td>
-                            <td>
-                                <h3>54000원</h3>
-                            </td>
-                            <td>
-                                <h3>3000원</h3>
-                            </td>
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-
-
-            </div>
-            <div class="paymentCal row">
-                주문계산
-                <table>
-                    <thead>
-                        <tr>
-                            <th>
-                                <h2>번호</h2>
-                            </th>
-                            <th>
-                                <h2>상품명</h2>
-                            </th>
-                            <th>
-                                <h2>판매가</h2>
-                            </th>
-                            <th>
-                                <h2>제휴 할인</h2>
-                            </th>
-                            <th>
-                                <h2>수량</h2>
-                            </th>
-                            <th>
-                                <h2>주문금액</h2>
-                            </th>
-                            <th>
-                                <h2>배송비</h2>
-                            </th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>
-                                <h3>109893403249</h3>
-                            </td>
-                            <td>
-                                <h3>가을 패딩</h3>
-                            </td>
-                            <td>
-                                <h3>56000원</h3>
-                            </td>
-                            <td>
-                                <h3>-2000원</h3>
-                            </td>
-                            <td>
-                                <h3>1</h3>
-                            </td>
-                            <td>
-                                <h3>54000원</h3>
-                            </td>
-                            <td>
-                                <h3>3000원</h3>
-                            </td>
-                        </tr>
-
-                    </tbody>
-
-                </table>
-            </div>
-            <div class="orderButton row">
-
-            </div>
-
-            <!-- Mypage header section -->
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-        <footer>
-            <span>copyrightⓒ by supergreat</span>
-        </footer>
+      <footer><%- include('./footer');%></footer>
     </div>
-</body>
-
+  </body>
 </html>
