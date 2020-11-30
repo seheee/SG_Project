@@ -24,4 +24,4 @@ userRouter.get(routes.detailDeliveryCheck, detailDeliveryCheckController); //상
 userRouter.get(routes.insertCart);
 
 userRouter.get(routes.order, getOrderController);
-userRouter.post(routes.order, postOrderController);
+userRouter.post(routes.orderComplete(), postOrderController);
