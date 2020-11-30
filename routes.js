@@ -15,7 +15,7 @@ const DELIVERY_CHECK = "/users/:id/deliveryCheck"; //주문한 상품 전체 다
 const DETAIL_DELIVER_CHECK = "/users/:id/:itemId"; //주문한 상태 보는 창(상품 별로)\
 
 const CLOTHES = "/clothes";
-const CLOTHES_OUTER = "/clothes/:category/:cur"
+const CLOTHES_OUTER = "/clothes/:category/:cur";
 const CLOTHES_TOP = "/clothes/top";
 const CLOTHES_BOTTOM = "/clothes/bottom";
 const CLOTHES_SHOES = "/clothes/shoes";
@@ -23,7 +23,7 @@ const CLOTHES_POPULAR = "/clothes/popular";
 const CLOTHES_SALE = "/clothes/sale";
 const CLOTHES_DETAIL = "/clothes/detail/:id";
 
-const ORDER = "/order"
+const ORDER = "/order/:id";
 const UPLOAD = "/upload";
 const ADMIN = "/admin";
 export const routes = {
@@ -33,27 +33,34 @@ export const routes = {
   logout: LOGOUT,
   search: SEARCH,
   users: USERS,
+  order: (id) => {
+    if (id) {
+      return `/order/${id}`;
+    } else {
+      return ORDER;
+    }
+  },
   userDetail: (id) => {
-    if(id){
-      return `/users/${id}`
-    }else{
-      return USER_DETAIL
+    if (id) {
+      return `/users/${id}`;
+    } else {
+      return USER_DETAIL;
     }
   },
   editProfile: EDIT_PROFILE,
   changePassword: CHANGE_PASSWORD,
   shoppingBasket: (id) => {
-    if(id){
-      return `/users/${id}/shoppingBasket`
-    }else{
-      return SHOPPING_BASKET
+    if (id) {
+      return `/users/${id}/shoppingBasket`;
+    } else {
+      return SHOPPING_BASKET;
     }
   },
   deliveryCheck: (id) => {
-    if(id){
-      return `/users/${id}/deliveryCheck`
-    }else{
-      return DELIVERY_CHECK
+    if (id) {
+      return `/users/${id}/deliveryCheck`;
+    } else {
+      return DELIVERY_CHECK;
     }
   },
   detailDeliveryCheck: DETAIL_DELIVER_CHECK,
@@ -64,21 +71,20 @@ export const routes = {
   clothesShoes: CLOTHES_SHOES,
   clothesPopular: CLOTHES_POPULAR,
   clothesSale: CLOTHES_SALE,
-  clothesDetail: (id)=>{
-    if(id){
-      return `/clothes/detail/${id}`
-    }else{
-      return CLOTHES_DETAIL
+  clothesDetail: (id) => {
+    if (id) {
+      return `/clothes/detail/${id}`;
+    } else {
+      return CLOTHES_DETAIL;
     }
   },
-  insertCart:(id)=>{
-    if(id){
-      return `/clothes/detail/${id}/insertCart`
-    }else{
-      return `/clothes/detail/:id/insertCart`
+  insertCart: (id) => {
+    if (id) {
+      return `/clothes/detail/${id}/insertCart`;
+    } else {
+      return `/clothes/detail/:id/insertCart`;
     }
   },
   upload: UPLOAD,
   admin: ADMIN,
-  order: ORDER
 };

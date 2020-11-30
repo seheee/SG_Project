@@ -22,7 +22,7 @@ export const postLoginController = passport.authenticate("local", {
 //local ---> localstrategy임
 
 export const logoutController = (req, res) => {
-  console.log(req.path)
+  console.log(req.path);
   res.clearCookie("connect.sid");
   res.redirect(routes.home);
   //req==request 요청에서 회원가입 정보를 받아온다
@@ -46,7 +46,6 @@ export const postJoinController = async (req, res, next) => {
     let result1 = cipher.update(pwd, "utf8", "base64"); // 'HbMtmFdroLU0arLpMflQ'
     result1 += cipher.final("base64"); // 'HbMtmFdroLU0arLpMflQYtt8xEf4lrPn5tX5k+a8Nzw='
     ///암호화 작업
-    
 
     const queryString = `insert into user(id,name,mail,pwd,gender,addr) values ('${idCount}','${name}','${email}','${result1}','${sex}','${addr}');`;
     await connection.query(queryString, function (error, result) {
@@ -91,17 +90,4 @@ export const uploadController = (req, res) => {
 };
 export const adminController = (req, res) => {
   res.render("admin.ejs");
-};
-
-export const getOrderController = (req, res) => {
-  res.render("order.ejs");
-};
-export const postOrderController = (req, res) => {
-  var queryString =
-    "INSERT INTO order(idx, order_num, user_id, product_idx, product_cnt, date, order_status) VALUES(10, 20, ''userid'', ''product_idx'', 1, ''Wednesday'', ''Delivering'');"; 
-  connection.query(queryString, function (error, result) {
-    if (error) throw error;
-    console.log("order complete");
-  });
-  res.render("product.ejs");
 };

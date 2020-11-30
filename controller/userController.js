@@ -10,10 +10,9 @@ export const userDetailController = async (req, res) => {
   } = req;
   const idQueryString = `select * from orders where user_id = ${id}`;
   await connection.query(idQueryString, async (error, result) => {
-    if(error) throw error;
-    
-    res.render("mypage.ejs",{orderCount:result.length});
+    if (error) throw error;
 
+    res.render("mypage.ejs", { orderCount: result.length });
   });
 
   //로그인한 유저의 상세 프로필 출력 --> 인증 정보 넘겨주어야함.
@@ -75,4 +74,56 @@ export const deliveryCheckController = async (req, res) => {
 };
 export const detailDeliveryCheckController = (req, res) => {
   //전체 -> 클릭 -> 상세 배송상황을 볼 수 있다.
+};
+export const getOrderController = async (req, res) => {
+  const {
+    user: { id },
+  } = req;
+  const idQueryString = `select * from cart where user_id = ${id}`;
+  await connection.query(idQueryString, async (error, result) => {
+    if (error) throw error;
+    let productQueryString = "";
+    result.forEach(
+      (item) =>
+        (productQueryString += `select * from product where idx=${item.product_idx};`)
+    );
+    await connection.query(productQueryString, async (error, result) => {
+      if (error) throw error;
+
+      res.render("order.ejs", { result, length: result.length, id });
+    });
+  });
+};
+export const postOrderController = (req, res) => {
+  const {
+    user: { id },
+  } = req;
+  var queryString =
+    'insert into orders(name, email, address, address2, order_status, card_name, card_num, expiration, cvv) values("' +
+    req.body.Name +
+    '",' +
+    req.body.email +
+    "," +
+    req.body.address +
+    ',"' +
+    req.body.address2 +
+    '",' +
+    req.body.cc -
+    name +
+    "," +
+    req.body.cc -
+    number +
+    ',"' +
+    req.body.cc -
+    expiration +
+    '","' +
+    req.body.cc -
+    cvv +
+    '");';
+
+  connection.query(queryString, function (error, result) {
+    if (error) throw error;
+    console.log("order complete");
+  });
+  res.render("product.ejs");
 };
