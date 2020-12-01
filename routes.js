@@ -15,10 +15,10 @@ const DELIVERY_CHECK = "/users/:id/deliveryCheck"; //주문한 상품 전체 다
 const DETAIL_DELIVER_CHECK = "/users/:id/:itemId"; //주문한 상태 보는 창(상품 별로)\
 
 const CLOTHES = "/clothes";
-const CLOTHES_OUTER = "/clothes/:category/:cur";
-const CLOTHES_TOP = "/clothes/top";
-const CLOTHES_BOTTOM = "/clothes/bottom";
-const CLOTHES_SHOES = "/clothes/shoes";
+const CLOTHES_OUTER = "/clothes/outer/:cur";
+const CLOTHES_TOP = "/clothes/top/:cur";
+const CLOTHES_BOTTOM = "/clothes/bottom/:cur";
+const CLOTHES_SHOES = "/clothes/shoes/:cur";
 const CLOTHES_POPULAR = "/clothes/popular";
 const CLOTHES_SALE = "/clothes/sale";
 const CLOTHES_DETAIL = "/clothes/detail/:id";
@@ -34,7 +34,13 @@ export const routes = {
   logout: LOGOUT,
   search: SEARCH,
   users: USERS,
-  order: ORDER,
+  order: (id) =>{
+    if(id){
+      return `/order/${id}`;
+    }else{
+      return ORDER
+    }
+  },
   orderComplete: (id) => {
     if (id) {
       return `/order/${id}/orderComplete`;

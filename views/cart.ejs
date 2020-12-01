@@ -24,6 +24,28 @@
             <div class="itemDiscount" style="border:1px solid rgba(0,0,0,0.1); border-radius: 30px;">할인정보</div>
             <div class="itemDiscount" style="border:1px solid rgba(0,0,0,0.1); border-radius: 30px;">삭제하기</div>
         </div>
+        <% if(length == 1){ %>
+          <div class="item">
+            <div class="itemImage" style="height: 100%;">
+              <img src="../<%=result[0].main_img %>" style="width:100%;height:100%">
+            
+            </div>
+            <div class="itemName"><%=result[0].name%></div>
+            <div class="itemCategory"><%=result[0].category%></div>
+            <div class="itemPrice"><%=result[0].price%>원</div>
+            <div class="itemDiscount">
+              <% if(result[0].discount==1){%>
+                <span>할인상품</span>
+              <% }else{%>
+                <span>정가상품</span>
+                <% }%>
+            </div>
+            <div class="itemDelete">
+             <a href>X</a>
+            </div>
+          </div>
+        <% }else{ %>
+
         <% for(var i=0;i<length;i++){%>
           <div class="item">
             <div class="itemImage" style="height: 100%;">
@@ -45,9 +67,10 @@
             </div>
           </div>
           <% } %>
+          <% } %>                                       
       </div>
       <div>
-        <a href="<%=routes.order%>"><span id="mypage">주문하기</span></a>
+        <a href="<%=routes.order(loggedUser.id)%>"><span id="mypage">주문하기</span></a>
       </div>
       
       

@@ -16,3 +16,24 @@ body{
 }
 
 
+.Section{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.signUpButton{
+    border:1px solid white;
+    background-color: white;
+    opacity: 0.6;
+    padding:2px 40px;
+    font-family: ProximaNova-Semibold, "Helvetica Neue", Verdana, Arial, sans-serif;
+    transition: 0.3s opacity ;
+    border-radius: 10px;
+}
+.signUpButton:hover{
+    opacity: 1;
+}
