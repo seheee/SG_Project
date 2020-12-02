@@ -3,12 +3,27 @@
   <head>
       <meta charset="utf-8">
       <title>SG_SaleItems</title>
-      <link rel="stylesheet" href="/css/header.css" />
+      
       <link rel="stylesheet" href="/css/footer.css" />
-      <link rel="stylesheet" href="/css/sale.css" />
       <link rel="stylesheet" href="/css/reset.css" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <style>
+        .link-unstyled,
+        .link-unstyled:link,
+        .link-unstyled:hover {
+          color: inherit;
+          text-decoration: inherit;
+        }
+      </style>
+      <link rel="stylesheet" href="/css/header.css" />
   </head>
+  
   <body>
+    
     <header>
       <div class="headerRow">
         <div class="headerColumn">
@@ -17,7 +32,7 @@
           </a>
         </div>
         <div class="headerColumn">
-          <a href="/">
+          <a href="/" class = "link-unstyled">
             <h2>SHOP</h2>
           </a>
         </div>
@@ -64,19 +79,20 @@
         <div class="headerColumn"><a href="/clothes/popular"><span>POPULAR</span></a></div>
       </div><br>
     </header>
-      <div class="row">
-        <form id="upload_form" action="./upload" method="POST">
+      <div class="container">
+        <br><br>
+        <form class = "form-group" id="upload_form" action="./upload" method="POST">
 
-            <fieldset>
-                <legend>데이터추가 </legend>
-                <table>
+            <fieldset >
+                <legend class = "text-center">데이터추가 </legend>
+                <table class = "table table-hover text-center" style="border: 1px solid">
                     <tr>
                         <td><label>상품명 </label></td>
-                        <td><input type="text" name="name" id="name" /></td>
+                        <td><input class = "form-control" type="text" name="name" id="name" /></td>
                     </tr>
                     <tr>
                         <td><label>카테고리</label></td>
-                        <td><select name="category" id="category">
+                        <td><select class = "form-control" name="category" id="category">
                             <option value="outer">outer</option>
                             <option value="top">top</option>
                             <option value="bottom">bottom</option>
@@ -85,7 +101,7 @@
                     </tr>
                     <tr>
                         <td><label>가격</label></td>
-                        <td><input type="number" name="price" id="price"/></td>
+                        <td><input class = "form-control" type="number" name="price" id="price"/></td>
                     </tr>
                     <tr>
                         <td><label>할인율</label></td>
@@ -93,30 +109,34 @@
                     </tr> 
                     <tr>
                         <td><label>성별</label></td>
-                        <td>
-                            <input type="radio" name="gender" id="gender" value="F">F</input>
-                            <input type="radio" name="gender" id="gender" value="M">M</input>
-                            <input type="radio" name="gender" id="gender" value="A">A</input>
+                        <td class="form-group">
+                            <input class="mb-2 mr-sm-2" type="radio" name="gender" id="gender" value="F">F</input>
+                            <input class="mb-2 mr-sm-2" type="radio" name="gender" id="gender" value="M">M</input>
+                            <input class="mb-2 mr-sm-2" type="radio" name="gender" id="gender" value="A">A</input>
                         </td>
                     </tr>
                     <tr>
                         <td><label>재고</label></td>
-                        <td><input type="number" name="stock" id="stock"/></td>
+                        <td><input class = "form-control" type="number" name="stock" id="stock"/></td>
                     </tr>
                     <tr>
                         <td><label>좋아요 수</label></td>
-                        <td><input type="number" name="likeCnt" id="likeCnt"/></td>
+                        <td><input class = "form-control" type="number" name="likeCnt" id="likeCnt"/></td>
                     </tr>
                     <tr>
                         <td><label>메인 이미지</label></td>
-                        <td><input type="text" name="main_img" id="main_img" /></td>
+                        <td><input class = "form-control" type="text" name="main_img" id="main_img" /></td>
                     </tr>
                     <tr>
                         <td><label>상세 이미지 </label></td>
-                        <td><input type="text" name="detail_img" id="detail_img" /></td>
+                        <td><input class = "form-control" type="text" name="detail_img" id="detail_img" /></td>
                     </tr>
                 </table>
-                <input type="submit" id="upload" value="upload" />
+                <div class="row">
+                  <div class="col-md-6 text-center"></div>
+                    <input class = "btn btn-primary" type="submit" id="upload" value="UPLOAD" />
+                  </div>
+                </div>
             </fieldset>
         </form>
      </div>

@@ -1,150 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>SG_PopularItems</title>
-      <link rel="stylesheet" href="/css/header.css" />
-      <link rel="stylesheet" href="/css/footer.css" />
-      <link rel="stylesheet" href="/css/popular.css" />
-      <link rel="stylesheet" href="/css/reset.css" />
-      <!--<meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'">-->
-      <script src='/js/slide.js'></script>
+    <title>SG_PopularItems</title>
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/popular.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <!--<meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'">-->
+    <script src="/js/slide.js"></script>
   </head>
-  <body>
-    <header>
-      <%- include('./header');%>
-    </header>
-      
-      <div class="row">
-        <h3>Popular Items</h3>
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-          <div class="text">Outer</div><br>
-          <div class="products">
-            <% console.log(datas) %>
-            <% datas["data_outer"].forEach(function (item,index){ %>
-              <section class="product">
-                <div class="each-product">
-                  <a href="/clothes/detail/<%= item.idx %>">
-                    <img src="<%= item.main_img %>" style="width:100%">
-                    <p class="product_name"><%= item.name %></p>
-                    <% if(item.discount == 0) { %>
-                      <p class="product_price"><%= item.price%></p>
-                    <% } else { %>
-                      <p class="product_price"><strike><%= item.price%></strike></p>
-                      <p class="product_discount">sale: <%= item.price * (1-item.discount/100)%> (<%= item.discount%>%)</p>
-                    <% }%>
-                    <p class="product_ex">product explanation</p>
-                  </a>
-                  </div>
-                </section>
-              <% })%>
-          </div>
-          <div class="numbertext">1 / 4</div>
-          <!-- Next and previous buttons -->
-          <a class="prev">&#10094;</a>
-          <a class="next">&#10095;</a>
-        </div>
-      
-        <div class="mySlides fade">
-          <div class="text">Top</div><br>
-          <div class="products">
-            <% console.log(datas) %>
-            <% datas["data_top"].forEach(function (item,index){ %>
-              <section class="product">
-                <div class="each-product">
-                  <a href="/clothes/detail/<%= item.idx %>">
-                    <img src="<%= item.main_img %>" style="width:100%">
-                    <p class="product_name"><%= item.name %></p>
-                    <% if(item.discount == 0) { %>
-                      <p class="product_price"><%= item.price%></p>
-                    <% } else { %>
-                      <p class="product_price"><strike><%= item.price%></strike></p>
-                      <p class="product_discount">sale: <%= item.price * (1-item.discount/100)%> (<%= item.discount%>%)</p>
-                    <% }%>
-                    <p class="product_ex">product explanation</p>
-                  </a>
-                  </div>
-                </section>
-              <% })%>
-          </div>
-          <div class="numbertext">2 / 4</div>
-          <a class="prev">&#10094;</a>
-          <a class="next">&#10095;</a>
-        </div>
-      
-        <div class="mySlides fade">
-          <div class="text">Bottom</div><br>
-          <div class="products">
-            <% console.log(datas) %>
-            <% datas["data_bottom"].forEach(function (item,index){ %>
-              <section class="product">
-                <div class="each-product">
-                  <a href="/clothes/detail/<%= item.idx %>">
-                    <img src="<%= item.main_img %>" style="width:100%">
-                    <p class="product_name"><%= item.name %></p>
-                    <% if(item.discount == 0) { %>
-                      <p class="product_price"><%= item.price%></p>
-                    <% } else { %>
-                      <p class="product_price"><strike><%= item.price%></strike></p>
-                      <p class="product_discount">sale: <%= item.price * (1-item.discount/100)%> (<%= item.discount%>%)</p>
-                    <% }%>
-                    <p class="product_ex">product explanation</p>
-                  </a>
-                  </div>
-                </section>
-              <% })%>
-          </div>
-          <div class="numbertext">3 / 4</div>
-          <a class="prev">&#10094;</a>
-          <a class="next">&#10095;</a>
-        </div>
+  <body style="background-color: white">
+    <header><%- include('./header');%></header>
 
-        <div class="mySlides fade">
-          <div class="text">Shoes</div><br>
-          <div class="products">
-            <% console.log(datas) %>
-            <% datas["data_shoes"].forEach(function (item,index){ %>
-              <section class="product">
-                <div class="each-product">
-                  <a href="/clothes/detail/<%= item.idx %>">
-                    <img src="<%= item.main_img %>" style="width:100%">
-                    <p class="product_name"><%= item.name %></p>
-                    <% if(item.discount == 0) { %>
-                      <p class="product_price"><%= item.price%></p>
-                    <% } else { %>
-                      <p class="product_price"><strike><%= item.price%></strike></p>
-                      <p class="product_discount">sale: <%= item.price * (1-item.discount/100)%> (<%= item.discount%>%)</p>
-                    <% }%>
-                    <p class="product_ex">product explanation</p>
-                  </a>
-                  </div>
-                </section>
-              <% })%>
-          </div>
-          <div class="numbertext">4 / 4</div>
-          <a class="prev">&#10094;</a>
-          <a class="next">&#10095;</a>
+    <div class="row">
+      <h3>Popular Items</h3>
+      <!-- Full-width images with number and caption text -->
+      <div class="mySlides fade">
+        <div class="text">Outer</div>
+        <br />
+        <div class="products">
+          <% console.log(datas) %> <% datas["data_outer"].forEach(function
+          (item,index){ %>
+          <section class="product">
+            <div class="each-product">
+              <a href="/clothes/detail/<%= item.idx %>">
+                <img src="<%= item.main_img %>" style="width: 100%" />
+                <p class="product_name"><%= item.name %></p>
+                <% if(item.discount == 0) { %>
+                <p class="product_price"><%= item.price%></p>
+                <% } else { %>
+                <p class="product_price"><strike><%= item.price%></strike></p>
+                <p class="product_discount">
+                  sale: <%= item.price * (1-item.discount/100)%> (<%=
+                  item.discount%>%)
+                </p>
+                <% }%>
+                <p class="product_ex">product explanation</p>
+              </a>
+            </div>
+          </section>
+          <% })%>
         </div>
-      
-        
+        <div class="numbertext">1 / 4</div>
+        <!-- Next and previous buttons -->
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
       </div>
-      <br>
-      
-      <!-- The dots/circles -->
-      <div style="text-align:center">
-        <!--<span class="dot" onclick="currentSlide(1)"></span>-->
-        <span class="dot" ></span>
-        <span class="dot" ></span>
-        <span class="dot" ></span>
-        <span class="dot" ></span>
-      </div>
-      
-      <footer>
-        <span>&copy;copyright by supergreat</span>"
-      </footer>
 
-     
-      <!--<script>
+      <div class="mySlides fade">
+        <div class="text">Top</div>
+        <br />
+        <div class="products">
+          <% console.log(datas) %> <% datas["data_top"].forEach(function
+          (item,index){ %>
+          <section class="product">
+            <div class="each-product">
+              <a href="/clothes/detail/<%= item.idx %>">
+                <img src="<%= item.main_img %>" style="width: 100%" />
+                <p class="product_name"><%= item.name %></p>
+                <% if(item.discount == 0) { %>
+                <p class="product_price"><%= item.price%></p>
+                <% } else { %>
+                <p class="product_price"><strike><%= item.price%></strike></p>
+                <p class="product_discount">
+                  sale: <%= item.price * (1-item.discount/100)%> (<%=
+                  item.discount%>%)
+                </p>
+                <% }%>
+                <p class="product_ex">product explanation</p>
+              </a>
+            </div>
+          </section>
+          <% })%>
+        </div>
+        <div class="numbertext">2 / 4</div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="text">Bottom</div>
+        <br />
+        <div class="products">
+          <% console.log(datas) %> <% datas["data_bottom"].forEach(function
+          (item,index){ %>
+          <section class="product">
+            <div class="each-product">
+              <a href="/clothes/detail/<%= item.idx %>">
+                <img src="<%= item.main_img %>" style="width: 100%" />
+                <p class="product_name"><%= item.name %></p>
+                <% if(item.discount == 0) { %>
+                <p class="product_price"><%= item.price%></p>
+                <% } else { %>
+                <p class="product_price"><strike><%= item.price%></strike></p>
+                <p class="product_discount">
+                  sale: <%= item.price * (1-item.discount/100)%> (<%=
+                  item.discount%>%)
+                </p>
+                <% }%>
+                <p class="product_ex">product explanation</p>
+              </a>
+            </div>
+          </section>
+          <% })%>
+        </div>
+        <div class="numbertext">3 / 4</div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="text">Shoes</div>
+        <br />
+        <div class="products">
+          <% console.log(datas) %> <% datas["data_shoes"].forEach(function
+          (item,index){ %>
+          <section class="product">
+            <div class="each-product">
+              <a href="/clothes/detail/<%= item.idx %>">
+                <img src="<%= item.main_img %>" style="width: 100%" />
+                <p class="product_name"><%= item.name %></p>
+                <% if(item.discount == 0) { %>
+                <p class="product_price"><%= item.price%></p>
+                <% } else { %>
+                <p class="product_price"><strike><%= item.price%></strike></p>
+                <p class="product_discount">
+                  sale: <%= item.price * (1-item.discount/100)%> (<%=
+                  item.discount%>%)
+                </p>
+                <% }%>
+                <p class="product_ex">product explanation</p>
+              </a>
+            </div>
+          </section>
+          <% })%>
+        </div>
+        <div class="numbertext">4 / 4</div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+      </div>
+    </div>
+    <br />
+
+    <!-- The dots/circles -->
+    <div style="text-align: center">
+      <!--<span class="dot" onclick="currentSlide(1)"></span>-->
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <footer><span>&copy;copyright by supergreat</span>"</footer>
+
+    <!--<script>
         console.log("Asdfasdfadf");
         /*var slideIndex = 1;
         showSlides(slideIndex);

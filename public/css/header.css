@@ -1,44 +1,49 @@
+.link-unstyled,
+.link-unstyled:link,
+.link-unstyled:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
 .headerHomeImage {
-    width: 24px;
-    height: 24px;
-    background-image: url("./imgs/home.svg");
-  }
-  .headerInstagramImage {
-    width: 24px;
-    height: 24px;
-    background-image: url("./imgs/instagram.svg");
-  }
-  header {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    transition: top 0.2s ease-in-out;
-  }
-  .headerRow{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: white;
-
-  }
-  .headerColumn {
-    width: 33%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  .headerColumn span{
-  color:rgba(0,0,0,0.7);
+  width: 24px;
+  height: 24px;
+  background-image: url("./imgs/home.svg");
+}
+.headerInstagramImage {
+  width: 24px;
+  height: 24px;
+  background-image: url("./imgs/instagram.svg");
+}
+header {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: top 0.2s ease-in-out;
+}
+.headerRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+}
+.headerColumn {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headerColumn span {
+  color: rgba(0, 0, 0, 0.7);
   font-weight: 500;
-
-  }
-  #Login, #mypage, #cart{
-    margin-left:30px;
-  }
+}
+#Login,
+#mypage,
+#cart {
+  margin-left: 30px;
+}

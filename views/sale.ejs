@@ -1,51 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>SG_SaleItems</title>
-      <link rel="stylesheet" href="/css/header.css" />
-      <link rel="stylesheet" href="/css/footer.css" />
-      <link rel="stylesheet" href="/css/sale.css" />
-      <link rel="stylesheet" href="/css/reset.css" />
+    <title>SG_SaleItems</title>
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/sale.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
   </head>
-  <body>
-    <header>
-      <%- include('./header');%>
-    </header>
-      <div class="row">
-        <h3>Sale Items</h3>
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-          <!--<div class="text">Outer</div><br>-->
-          <div class="products">
-            <% data.forEach(function (item,index) { %>
-              <section class="product">
-                <div class="each-product">
-                  <a href="/clothes/detail/<%= item.idx %>">
-                  <img src="<%= item.main_img %>" style="width:100%">
-                  <p class="product_name"><%= item.name %></p>
-                  <% if(item.discount == 0) { %>
-                    <p class="product_price"><%= item.price%></p>
-                  <% } else { %>
-                    <p class="product_price"><strike><%= item.price%></strike></p>
-                    <p class="product_discount">sale: <%= item.price * (1-item.discount/100)%> (<%= item.discount%>%)</p>
-                  <% }%>
-                  <p class="product_ex">product explanation</p>
-                </a>
-                </div>
-              </section>
-            <% }) %>
-           
-          </div>       
+  <body style="background-color: white">
+    <header><%- include('./header');%></header>
+    <div class="row">
+      <h3>Sale Items</h3>
+      <!-- Full-width images with number and caption text -->
+      <div class="mySlides fade">
+        <!--<div class="text">Outer</div><br>-->
+        <div class="products">
+          <% data.forEach(function (item,index) { %>
+          <section class="product">
+            <div class="each-product">
+              <a href="/clothes/detail/<%= item.idx %>">
+                <img src="<%= item.main_img %>" style="width: 100%" />
+                <p class="product_name"><%= item.name %></p>
+                <% if(item.discount == 0) { %>
+                <p class="product_price"><%= item.price%></p>
+                <% } else { %>
+                <p class="product_price"><strike><%= item.price%></strike></p>
+                <p class="product_discount">
+                  sale: <%= item.price * (1-item.discount/100)%> (<%=
+                  item.discount%>%)
+                </p>
+                <% }%>
+                <p class="product_ex">product explanation</p>
+              </a>
+            </div>
+          </section>
+          <% }) %>
         </div>
       </div>
-      <br>
-      
-      <footer>
-        <span>&copy;copyright by supergreat</span>
-      </footer>
-    
-    <script>
-     
-    </script>
+    </div>
+    <br />
+
+    <footer>
+      <span>&copy;copyright by supergreat</span>
+    </footer>
+
+    <script></script>
   </body>
 </html>

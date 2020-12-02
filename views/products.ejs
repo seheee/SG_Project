@@ -8,11 +8,11 @@
       <link rel="stylesheet" href="/css/sale.css" />
       <link rel="stylesheet" href="/css/reset.css" />
   </head>
-  <body>
+  <body style="background-color: white;">
     <header>
       <%- include('./header');%>
     </header>
-      <div class="row">
+      <div class="row" >
         <h3 id="category"></h3>
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
@@ -30,7 +30,6 @@
                     <p class="product_price"><strike><%= item.price%></strike></p>
                     <p class="product_discount">sale: <%= item.price * (1-item.discount/100)%> (<%= item.discount%>%)</p>
                   <% }%>
-                  <p class="product_ex">product explanation</p>
                 </a>
                 </div>
               </section>
