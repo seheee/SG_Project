@@ -13,44 +13,43 @@
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/join.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
       $(function () {
         $("#datepicker").datepicker();
       });
     </script>
-    <style>
-      .btn {
-        width: 50px;
-        height: 50px;
-        background: none;
-        border: none;
-        padding: 0;
-      }
-      /* button은 태생적으로 padding 이 있다. */
-      button img {
-        width: 100%;
-      }
-    </style>
   </head>
 
-    <body>
-      <header>
-        <%- include('./header');%>
-      </header>
-    <form action="/join" method="post">
+  <body style="background-color: white">
+    <header><%- include('./header');%></header>
+    <br /><br /><br />
+    <form class="form-group text-center" action="/join" method="post">
       <fieldset class="field">
-        <legend>필수 입력 사항</legend>
+        <legend class="text-center">필수 입력 사항</legend>
         <p>
           <label for="name">이름: </label>
-          <input id="name" type="text" name="name" />
+          <input class="form-control" id="name" type="text" name="name" />
         </p>
         <p>
           <label for="email">이메일: </label>
-          <input id="email" type="email" name="email" />
+          <input class="form-control" id="email" type="email" name="email" />
         </p>
         <p>
           <label for="password">비밀번호: </label>
-          <input id="password" type="password" name="pwd" />
+          <input
+            class="form-control"
+            id="password"
+            type="password"
+            name="pwd"
+          />
         </p>
       </fieldset>
 
@@ -60,20 +59,38 @@
         <p>
           <span>거주지</span>
           <label for="addr">거주지 </label>
-          <input type="text" id="addr" name="addr" />
+          <input class="form-control" type="text" id="addr" name="addr" />
         </p>
 
-        <p>
-          <span>성별</span>
+        <p class="form-group">
+          <h3>성별</h3>
           <label for="female">남성</label>
-          <input id="female" type="radio" value="M" name="sex" />
+          <input
+            class="mb-2 mr-sm-2"
+            id="female"
+            type="radio"
+            value="M"
+            name="sex"
+          />
           <label for="female">여성</label>
-          <input id="female" type="radio" value="F" name="sex" />
+          <input
+            class="mb-2 mr-sm-2"
+            id="female"
+            type="radio"
+            value="F"
+            name="sex"
+          />
         </p>
 
         <p>
           <span>회원약관</span><br />
-          <textarea name="mb_policy" readonly="readonly" rows="10" cols="100">
+          <textarea
+            class="form-control"
+            name="mb_policy"
+            readonly="readonly"
+            rows="10"
+            cols="100"
+          >
 여러분을 환영합니다.
 네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
 네이버 서비스를 이용하시거나 네이버 서비스 회원으로 가입하실 경우 여러분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기 바랍니다.
@@ -86,14 +103,8 @@
         </p>
       </fieldset>
       <p align="center">
-        <input type="submit" value="회원가입" />
-        <input type="reset" value="재작성" />
-        <button type="submit">전송</button>
-
-        <input class="btn" type="image" src="send.png" alt="send" />
-        <button class="btn" type="submit">
-          <img src="send.png" alt="send" />
-        </button>
+        <input class="btn btn-primary" type="submit" value="회원가입" />
+        <input class="btn btn-primary" type="reset" value="재작성" />
         <!-- 버튼은 항상 무조건 테두리가 생긴다!!! -->
         <!-- button은 종류 태그가 있다!
                 input은 종류 태그가 없다!

@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/reset.css" />
   </head>
-  <body>
-    <header>
-      <%- include('./header');%>
-    </header>
-    
+  <body style="background-color: white">
+    <header><%- include('./header');%></header>
+
     <!--<header>
       <div class="headerRow">
         <div class="headerColumn">
@@ -87,7 +85,19 @@
       </div>
       <br />
     </header>-->
-    <div class="Section" style = "height : 100%;display:flex; justify-content: center; align-items: center;">
+    <div
+      class="Section"
+      style="
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('/clothes/img/2122938.jpg');
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+      "
+    >
       <div class="signUpButton">
         <a href="/join">
           <span style="font-size: 18px">SIGN UP NOW</span>

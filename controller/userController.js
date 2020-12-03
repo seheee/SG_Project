@@ -44,7 +44,6 @@ export const shoppingBasketController = async (req, res) => {
         if (error) throw error;
         console.log(result.length);
         res.render("cart.ejs", { result, length: result.length }); //carts 넣어주기
-        
       });
     }
   });
@@ -104,11 +103,11 @@ export const getOrderController = async (req, res) => {
     }
   });
 };
-export const postOrderController = async(req, res) => {
-
+export const postOrderController = async (req, res) => {
   const {
     user: { id },
   } = req;
+  var _date = Date();
   var orderr = {
     user_id: id,
     name: req.body.Name ? req.body.Name : "a",
@@ -123,7 +122,7 @@ export const postOrderController = async(req, res) => {
     product_idx: 1,
     product_cnt: 123,
     order_status: "success",
-    order_date: "abc",
+    order_date: _date,
   };
 
   const idQueryString = `select * from cart where user_id = ${id}`;
@@ -138,25 +137,30 @@ export const postOrderController = async(req, res) => {
     const cartData = result;
     console.log(cartData);
     if (productQueryString == "") {
-      res.redirect("home.ejs")
+      res.redirect("home.ejs");
     } else {
       await connection.query(productQueryString, async (error, result) => {
         if (error) throw error;
-        let ordersQuery = ""
-        result.forEach((item)=>(ordersQuery += `insert into orders(user_id,name,email,address,address2,card_name,card_num,expiration,cvv,product_idx,product_cnt,order_status,order_date) values(${id},'${orderr.name}','${orderr.email}','${orderr.address}','${orderr.address2}','${orderr.card_name}','${orderr.card_num}','${orderr.expiration}','${orderr.cvv}',${item[0].idx},1,'${orderr.order_status}','${orderr.order_date}');`))
-        
-        await connection.query(ordersQuery,async(error,result)=>{
-          if(error)throw error;
-          console.log("insert success")
-          let cartsQuery = "";
-          cartData.forEach((item)=>(cartsQuery += `delete from cart where  idx= ${item.idx};`))
-          await connection.query(cartsQuery,async(error,result)=>{
-            if(error) throw error
-            console.log("delete success")
-            res.redirect(routes.home)
-          })
-        })
+        let ordersQuery = "";
+        result.forEach(
+          (item) =>
+            (ordersQuery += `insert into orders(user_id,name,email,address,address2,card_name,card_num,expiration,cvv,product_idx,product_cnt,order_status,order_date) values(${id},'${orderr.name}','${orderr.email}','${orderr.address}','${orderr.address2}','${orderr.card_name}','${orderr.card_num}','${orderr.expiration}','${orderr.cvv}',${item[0].idx},1,'${orderr.order_status}','${orderr.order_date}');`)
+        );
 
+        await connection.query(ordersQuery, async (error, result) => {
+          if (error) throw error;
+          console.log("insert success");
+          let cartsQuery = "";
+          cartData.forEach(
+            (item) =>
+              (cartsQuery += `delete from cart where  idx= ${item.idx};`)
+          );
+          await connection.query(cartsQuery, async (error, result) => {
+            if (error) throw error;
+            console.log("delete success");
+            res.redirect(routes.home);
+          });
+        });
       });
     }
   });
@@ -168,6 +172,4 @@ export const postOrderController = async(req, res) => {
   // });
 
   // res.render("home");
-
-
 };

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -12,21 +13,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/apple-touch-icon.png"
-    sizes="180x180" />
-  <link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32"
-    type="image/png" />
-  <link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16"
-    type="image/png" />
-  <link rel="manifest" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/manifest.json" />
-  <link rel="mask-icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/safari-pinned-tab.svg"
-    color="#563d7c" />
-  <link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon.ico" />
-  <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml" />
-  <meta name="theme-color" content="#563d7c" />
-
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -45,19 +33,20 @@
   </style>
   </head>
 
-<header>
-<%- include('./header');%>
-</header>
+
 <body class="bg-light">
+  <header>
+    <%- include('./header');%>
+  </header>
   <div class="container">
     <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="Checkout%20example%20%C2%B7%20Bootstrap_files/bootstrap-solid.svg" alt=""
-        width="72" height="72" />
-      <h2><%=id%>번 유저 주문 내역 </h2>
+      <br><br><h2>주문 내역</h2><br><br>
     </div>
 
     <div class="row">
+      
       <div class="col-md-4 order-md-2 mb-4">
+        <br><br>
         <h4 class="d-flex justify-content-between align-items-center mb-3">
           <span class="text-muted">장바구니</span>
           <span class="badge badge-secondary badge-pill"><%=length%></span>
@@ -75,8 +64,8 @@
               <%total =total + result[i][0].price %>
             <% } else { %>
               <span class="text-muted"><strike><%=result[i][0].price%>원</strike></span>
-              <% var a = result[i][0].price * ((1-result[i][0].discount)/100);%>
-              <span class="text-muted">sale: <%= a%> 원  <%= result[i][0].discount %> %  </span>
+              <% var a = result[i][0].price * (1-(result[i][0].discount)/100);%>
+              <span class="text-muted" style="color: black;"><br><%= a%>원 <br><p style="color:red;">(-<%= result[i][0].discount %>%)</p>  </span>
               <% total = total + a; %>
             <% } %>
           </li>
